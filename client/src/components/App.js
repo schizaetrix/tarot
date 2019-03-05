@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
 
-import Heading from './Heading'
+import Header from './Header'
 import Landing from './Landing'
 import DailyCard from './DailyCard'
 
@@ -9,10 +9,10 @@ import DailyCard from './DailyCard'
 class App extends Component {
     render () {
         return (
-            <div>
-                <Heading />
+            <div className="container">
                 <BrowserRouter>
                     <div>
+                        <Header />
                         <Route 
                             path='/'
                             exact component={Landing}
