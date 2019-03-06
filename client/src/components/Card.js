@@ -16,7 +16,9 @@ class Card extends Component {
                             id="card-style" 
                         />
                     </div>
-                    <div className="card-title">{randomCard.title}</div>
+                    <div className="card-title center-align">
+                        {randomCard.title}
+                    </div>
                 </div>
             </div>
         )

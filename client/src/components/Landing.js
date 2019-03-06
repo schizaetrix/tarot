@@ -21,13 +21,7 @@ const Landing = () => {
                 backgroundRepeat: 'no-repeat'
             }}
         >
-            <div
-                id="landing-content"
-                style={{
-                    paddingTop: 30,
-                    paddingBottom: 175 
-                }}
-            >
+            <div id="landing-content">
                 <h2 className="white-text">
                     Do you have a burning question?
                 </h2>

@@ -22,13 +22,7 @@ const DailyCard = () => {
                 backgroundRepeat: 'no-repeat'
             }}
         >
-            <div
-                id="daily-card-content"
-                style={{
-                    // paddingTop: 5,
-                    paddingBottom: 30 
-                }}
-            >
+            <div id="daily-card-content">
                 <h3 className="white-text">
                     Daily Card Draw
                 </h3>
