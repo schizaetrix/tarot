@@ -9,7 +9,13 @@ const Landing = () => {
         <div 
             className="row"
             style={{ 
-                backgroundImage: `url(${Marseilles1})`,
+                background: `
+                    linear-gradient( 
+                        rgba(0, 0, 0, 0.50), 
+                        rgba(0, 0, 0, 0.50) ), 
+                        url(${Marseilles1}
+                    )
+                `,
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
