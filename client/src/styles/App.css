@@ -1,0 +1,23 @@
+
+#landing-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center
+}
+
+#daily-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#the-fool {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 180px
+}

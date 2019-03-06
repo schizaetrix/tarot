@@ -6,10 +6,10 @@ class Header extends Component {
     render () {
         return (
             <nav>
-                <div className="nav-wrapper grey darken-3">
+                <div className="nav-wrapper purple darken-3">
                     <Link 
                         to='/' 
-                        className="brand-logo"
+                        className="brand-logo center"
                     >
                         TAROT
                     </Link>
