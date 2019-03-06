@@ -8,15 +8,13 @@ const DailyCard = () => {
     return (
         <div 
             className="row"
-            // id="daily-card-row"
             style={{ 
                 background: `
                     linear-gradient( 
                         rgba(0, 0, 0, 0.75), 
-                        rgba(0, 0, 0, 0.75) ), 
-                        url(${Marseilles1}
-                    )
-                `,
+                        rgba(0, 0, 0, 0.75) 
+                    ), 
+                    url(${Marseilles1})`,
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'

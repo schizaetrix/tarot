@@ -12,10 +12,9 @@ const Landing = () => {
                 background: `
                     linear-gradient( 
                         rgba(0, 0, 0, 0.50), 
-                        rgba(0, 0, 0, 0.50) ), 
-                        url(${Marseilles1}
-                    )
-                `,
+                        rgba(0, 0, 0, 0.50) 
+                    ), 
+                    url(${Marseilles1})`,
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
@@ -27,7 +26,12 @@ const Landing = () => {
                 </h2>
                 <Link
                     to="/dailycard"
-                    className="btn purple darken-3"
+                    className="
+                        btn
+                        purple darken-3
+                        waves-effect 
+                        waves-light 
+                    "
                     style={{ marginTop: 10 }}
                 >
                     Step into the Reading Room

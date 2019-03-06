@@ -12,7 +12,8 @@ class Card extends Component {
                     <div className="card-image">
                         <img 
                             className="activator"
-                            src={randomCard.image} 
+                            src={randomCard.image}
+                            alt={randomCard.title}
                             id="card-style" 
                         />
                     </div>
