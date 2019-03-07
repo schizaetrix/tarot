@@ -36,6 +36,7 @@ class GoogleAuth extends Component {
             return null
         } else if (this.props.isSignedIn) {
             return (
+                // eslint-disable-next-line
                 <a 
                     className="
                         waves-effect 
@@ -53,6 +54,7 @@ class GoogleAuth extends Component {
             )
         } else {
             return (
+                // eslint-disable-next-line
                 <a 
                     className="
                         waves-effect 

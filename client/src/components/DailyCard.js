@@ -1,26 +1,15 @@
 import React from 'react'
 
 import Card from './Card'
-import Marseilles1 from '../images/marseilles1.jpeg'
 
 
 const DailyCard = () => {
     return (
         <div 
             className="row"
-            style={{ 
-                background: `
-                    linear-gradient( 
-                        rgba(0, 0, 0, 0.75), 
-                        rgba(0, 0, 0, 0.75) 
-                    ), 
-                    url(${Marseilles1})`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat'
-            }}
+            id="background-image"
         >
-            <div id="daily-card-content">
+            <div id="content-background">
                 <h3 className="white-text">
                     Daily Card Draw
                 </h3>

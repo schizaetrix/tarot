@@ -5,6 +5,7 @@ import '../styles/App.css'
 import Header from './Header'
 import Landing from './Landing'
 import DailyCard from './DailyCard'
+import CreateReading from './readings/CreateReading'
 
 
 class App extends Component {
@@ -21,6 +22,10 @@ class App extends Component {
                         <Route 
                             path='/dailycard'
                             exact component={DailyCard}
+                        />
+                        <Route 
+                            path='/readings/new'
+                            exact component={CreateReading}
                         />
                     </div>
                 </BrowserRouter>

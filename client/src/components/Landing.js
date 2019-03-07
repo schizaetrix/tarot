@@ -1,31 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import Marseilles1 from '../images/marseilles1.jpeg'
-
 
 const Landing = () => {
     return (
         <div 
             className="row"
-            style={{ 
-                background: `
-                    linear-gradient( 
-                        rgba(0, 0, 0, 0.50), 
-                        rgba(0, 0, 0, 0.50) 
-                    ), 
-                    url(${Marseilles1})`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat'
-            }}
+            id="background-image-landing"
         >
             <div id="landing-content">
                 <h2 className="white-text">
                     Do you have a burning question?
                 </h2>
                 <Link
-                    to="/dailycard"
+                    to="/readings/new"
                     className="
                         btn
                         purple darken-3

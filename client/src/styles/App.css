@@ -1,3 +1,6 @@
+.container {
+    width: 95%
+}
 
 #landing-content {
     display: flex;
@@ -5,21 +8,57 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 85vh
+    height: 90vh
 }
 
-#daily-card-content {
+#background-image {
+    background: linear-gradient( 
+        rgba(0, 0, 0, 0.75), 
+        rgba(0, 0, 0, 0.75) 
+    ), url('../images/marseilles1.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+#background-image-landing {
+    background: linear-gradient( 
+        rgba(0, 0, 0, 0.5), 
+        rgba(0, 0, 0, 0.5) 
+    ), url('../images/marseilles1.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+#content-background {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 85vh
+    height: 90vh
 }
+
+   /* label underline focus color */
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #6a1b9a !important;
+    box-shadow: 0 1px 0 0 #000 !important;
+}
+
+.select-dropdown, .dropdown-trigger {
+    background-color: #424242;
+    color: #FFF
+}
+
+.dropdown-content li>span {
+    color: #FFF
+}
+
 
 #card-style {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 300px;
-    width: 180px
+    height: 400px;
+    width: 250px
 }
