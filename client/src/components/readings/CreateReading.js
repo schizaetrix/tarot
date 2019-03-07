@@ -22,7 +22,7 @@ class CreateReading extends Component {
             <div className="field input-field col s12">
                 <input
                     autoComplete="off" 
-                    className="white-text validate"
+                    className="white-text"
                     type="text"
                     placeholder={label}
                     { ...input }
@@ -36,7 +36,6 @@ class CreateReading extends Component {
         return (
             <div className="input-field col s12">
                 <select
-                    className="validate"
                     { ...input } 
                 >
                     <option value="" disabled>
