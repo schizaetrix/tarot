@@ -7,36 +7,37 @@ class CreateReading extends Component {
     componentDidMount () {
         M.AutoInit() // initializes materialize-css elements
     }
-    renderInput ({ input, label }) {
+    renderInput = ({ input, label, meta }) => {
         // ^deconstructed formProps
         return (
             <div className="field input-field col s12">
                 <input
                     autoComplete="off" 
-                    className="white-text"
+                    className="white-text validate"
                     type="text"
                     placeholder={label}
-                    { ...input } 
+                    { ...input }
                 />
+                <div>{meta.error}</div>
             </div>
         )
     }
-    renderSelect ({ input, label }) {
+    renderSelect = ({ input, label, meta }) => {
         // ^deconstructed formProps
         return (
-            <div className="input-field col s12 white-text">
+            <div className="input-field col s12">
                 <select
-                    className="white-text"
-                    placeholder={label}
+                    className="validate"
                     { ...input } 
                 >
-                    <option value="defaultValue">
+                    <option value="" disabled>
                         {label}
                     </option>
                     <option value="1">One Card Spread</option>
                     <option value="2">Three Card Spread</option>
                     <option value="3">Five Card Spread</option>
                 </select>
+                <div>{meta.error}</div>
             </div>
         )
     }
@@ -54,6 +55,7 @@ class CreateReading extends Component {
                         Ask your question below...
                     </h3>
                     <form 
+                        className="ui form error"
                         autoComplete="off"
                         onSubmit={this.props.handleSubmit(this.onSubmit)}
                     >
@@ -85,6 +87,18 @@ class CreateReading extends Component {
     }
 }
 
+const validate = (formValues) => {
+    const errors = {}
+    if (!formValues.question) {
+        errors.question = 'You must enter a question'
+    }
+    if (!formValues.spread) {
+        errors.spread = 'You must choose a spread'
+    }
+    return errors
+}
+
 export default reduxForm({
-    form: 'createReading'
+    form: 'createReading',
+    validate
 })(CreateReading)
