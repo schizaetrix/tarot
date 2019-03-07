@@ -7,6 +7,15 @@ class CreateReading extends Component {
     componentDidMount () {
         M.AutoInit() // initializes materialize-css elements
     }
+    renderError ({ error, touched }) {
+        if ( touched && error) {
+            return (
+                <div className="ui error message">
+                    <div className="header red-text">{error}</div>
+                </div>
+            )
+        }
+    }
     renderInput = ({ input, label, meta }) => {
         // ^deconstructed formProps
         return (
@@ -18,7 +27,7 @@ class CreateReading extends Component {
                     placeholder={label}
                     { ...input }
                 />
-                <div>{meta.error}</div>
+                {this.renderError(meta)}
             </div>
         )
     }
@@ -37,7 +46,7 @@ class CreateReading extends Component {
                     <option value="2">Three Card Spread</option>
                     <option value="3">Five Card Spread</option>
                 </select>
-                <div>{meta.error}</div>
+                {this.renderError(meta)}
             </div>
         )
     }
