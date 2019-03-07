@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Field, reduxForm } from 'redux-form'
+import { connect } from 'react-redux'
 import M from 'materialize-css'
+
+import { createReading } from '../../actions'
 
 
 class CreateReading extends Component {
@@ -50,7 +53,7 @@ class CreateReading extends Component {
         )
     }
     onSubmit = (formValues) => {
-        console.log(formValues)
+        this.props.createReading(formValues)
     }
     render () {
         return (
@@ -106,7 +109,12 @@ const validate = (formValues) => {
     return errors
 }
 
-export default reduxForm({
+const formWrapped = reduxForm({
     form: 'createReading',
     validate
 })(CreateReading)
+
+export default connect(
+    null,
+    { createReading }
+)(formWrapped)

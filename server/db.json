@@ -1,3 +1,9 @@
 {
-    "readings": []
+  "readings": [
+    {
+      "question": "Will the form submission work?",
+      "spread": "2",
+      "id": 1
+    }
+  ]
 }
