@@ -76,7 +76,7 @@ import wandsPage from './cards/Minors Wands Page.jpg'
 import wandsKnight from './cards/Minors Wands Knight.jpg'
 import wandsQueen from './cards/Minors Wands Queen.jpg'
 import wandsKing from './cards/Minors Wands King.jpg'
-
+// -------------------------------------------------
 
 const Cards = [
     {
@@ -471,4 +471,6 @@ const Cards = [
     }
 ]
 
+// -------------------------------------------------
 export default Cards
+// -------------------------------------------------

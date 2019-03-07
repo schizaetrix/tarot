@@ -1,5 +1,4 @@
 import readings from '../apis/readings'
-
 import { 
     SIGN_IN, 
     SIGN_OUT,
@@ -9,7 +8,7 @@ import {
     DELETE_READING,
     EDIT_READING
 } from './types'
-
+// -------------------------------------------------
 
 export const signIn = (userId) => {
     return {
@@ -24,8 +23,22 @@ export const signOut = () => {
     }
 }
 
-export const createReading = (formValues) => async (dispatch) => {
-    const response = await readings.post('/readings', formValues)
+export const createReading = (formValues) => async (dispatch, getState) => {
+    const { userId } = getState().auth
+    
+    let date = new Date();
+    let dd = date.getDate();
+    let mm = date.getMonth() + 1; //January is 0!
+    let yyyy = date.getFullYear();
+    if (dd < 10) {
+    dd = '0' + dd;
+    }
+    if (mm < 10) {
+    mm = '0' + mm;
+    }
+    date = mm + '/' + dd + '/' + yyyy
+
+    const response = await readings.post('/readings', { ...formValues, userId, date })
     dispatch({
         type: CREATE_READING,
         payload: response.data
@@ -63,3 +76,4 @@ export const deleteReading = (id) => async (dispatch) => {
         payload: id
     })
 }
+// -------------------------------------------------

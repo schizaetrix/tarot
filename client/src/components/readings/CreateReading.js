@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { Field, reduxForm } from 'redux-form'
 import { connect } from 'react-redux'
 import M from 'materialize-css'
-
+// -------------------------------------------------
 import { createReading } from '../../actions'
-
+// -------------------------------------------------
 
 class CreateReading extends Component {
     componentDidMount () {
@@ -44,9 +44,9 @@ class CreateReading extends Component {
                     <option value="" disabled>
                         {label}
                     </option>
-                    <option value="1">One Card Spread</option>
-                    <option value="2">Three Card Spread</option>
-                    <option value="3">Five Card Spread</option>
+                    <option value="One Card Spread">One Card Spread</option>
+                    <option value="Three Card Spread">Three Card Spread</option>
+                    <option value="Five Card Spread">Five Card Spread</option>
                 </select>
                 {this.renderError(meta)}
             </div>
@@ -98,6 +98,7 @@ class CreateReading extends Component {
     }
 }
 
+// -------------------------------------------------
 const validate = (formValues) => {
     const errors = {}
     if (!formValues.question) {
@@ -108,13 +109,14 @@ const validate = (formValues) => {
     }
     return errors
 }
-
+// -------------------------------------------------
 const formWrapped = reduxForm({
     form: 'createReading',
     validate
 })(CreateReading)
-
+// -------------------------------------------------
 export default connect(
     null,
     { createReading }
 )(formWrapped)
+// -------------------------------------------------

@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
-
+// -------------------------------------------------
 import '../styles/App.css'
 import Header from './Header'
 import Landing from './Landing'
 import DailyCard from './DailyCard'
 import CreateReading from './readings/CreateReading'
-
+import ReadingsList from './readings/ReadingsList'
+// -------------------------------------------------
 
 class App extends Component {
     render () {
@@ -27,6 +28,10 @@ class App extends Component {
                             path='/readings/new'
                             exact component={CreateReading}
                         />
+                        <Route 
+                            path='/readings'
+                            exact component={ReadingsList}
+                        />
                     </div>
                 </BrowserRouter>
             </div>
@@ -34,4 +39,6 @@ class App extends Component {
     }
 }
 
+// -------------------------------------------------
 export default App
+// -------------------------------------------------

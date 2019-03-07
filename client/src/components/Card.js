@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-
+// -------------------------------------------------
 import Cards from '../images/cardsDB'
-
+// -------------------------------------------------
 
 class Card extends Component {
     render () {
@@ -26,4 +26,6 @@ class Card extends Component {
     }
 }
 
+// -------------------------------------------------
 export default Card
+// -------------------------------------------------
