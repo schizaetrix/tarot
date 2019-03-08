@@ -64,8 +64,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 400px;
-    width: 250px
 }
 
 .collection, .collection-item:nth-of-type(odd) {

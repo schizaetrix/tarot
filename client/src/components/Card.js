@@ -14,10 +14,14 @@ class Card extends Component {
                             className="activator"
                             src={randomCard.image}
                             alt={randomCard.title}
-                            id="card-style" 
+                            id="card-style"
+                            style={this.props.style}
                         />
                     </div>
-                    <div className="card-title center-align">
+                    <div 
+                        className="card-title center-align"
+                        style={{ fontSize: this.props.style.fontSize }}
+                    >
                         {randomCard.title}
                     </div>
                 </div>

@@ -4,9 +4,11 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import '../styles/App.css'
 import Header from './Header'
 import Landing from './Landing'
-import DailyCard from './DailyCard'
 import CreateReading from './readings/CreateReading'
 import ReadingsList from './readings/ReadingsList'
+import OneCardSpread from './readings/OneCardSpread'
+import ThreeCardSpread from './readings/ThreeCardSpread'
+import FiveCardSpread from './readings/FiveCardSpread'
 // -------------------------------------------------
 
 class App extends Component {
@@ -21,16 +23,24 @@ class App extends Component {
                             exact component={Landing}
                         />
                         <Route 
-                            path='/dailycard'
-                            exact component={DailyCard}
-                        />
-                        <Route 
                             path='/readings/new'
                             exact component={CreateReading}
                         />
                         <Route 
                             path='/readings'
                             exact component={ReadingsList}
+                        />
+                        <Route 
+                            path='/readings/onecard'
+                            exact component={OneCardSpread}
+                        />
+                        <Route 
+                            path='/readings/threecard'
+                            exact component={ThreeCardSpread}
+                        />
+                        <Route 
+                            path='/readings/fivecard'
+                            exact component={FiveCardSpread}
                         />
                     </div>
                 </BrowserRouter>

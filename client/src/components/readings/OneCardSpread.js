@@ -1,9 +1,9 @@
 import React from 'react'
 // -------------------------------------------------
-import Card from './Card'
+import Card from '../Card'
 // -------------------------------------------------
 
-const DailyCard = () => {
+const OneCardSpread = () => {
     return (
         <div 
             className="row"
@@ -11,14 +11,20 @@ const DailyCard = () => {
         >
             <div id="content-background">
                 <h3 className="white-text">
-                    Daily Card Draw
+                    One Card Draw
                 </h3>
-                <Card />
+                <Card 
+                    style={{ 
+                        height: '500px',
+                        width: '300px',
+                        fontSize: '30px'
+                     }}
+                />
             </div>
         </div>
     )
 }
 
 // -------------------------------------------------
-export default DailyCard
+export default OneCardSpread
 // -------------------------------------------------
