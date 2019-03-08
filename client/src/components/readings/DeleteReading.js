@@ -7,8 +7,12 @@ import { fetchReading, deleteReading } from '../../actions'
 class DeleteReading extends Component {
     render () {
         return (
-            <div>
-                DeleteReading
+            <div id="background-image">
+                <div id="content-background">
+                    <h2 className="white-text">
+                        DeleteReading
+                    </h2>
+                </div>
             </div>
         )
     }

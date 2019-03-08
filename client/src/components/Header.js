@@ -13,7 +13,7 @@ class Header extends Component {
                         to='/' 
                         className="brand-logo center"
                     >
-                        TAROT
+                        The BOOK of TAROT
                     </Link>
                     <ul className="right">
                         <GoogleAuth />

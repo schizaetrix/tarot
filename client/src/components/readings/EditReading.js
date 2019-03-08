@@ -7,8 +7,12 @@ import { fetchReading, editReading } from '../../actions'
 class EditReading extends Component {
     render () {
         return (
-            <div>
-                EditReading
+            <div id="background-image">
+                <div id="content-background">
+                    <h2 className="white-text">
+                        EditReading
+                    </h2>
+                </div>
             </div>
         )
     }

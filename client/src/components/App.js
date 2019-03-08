@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { Router, Route, Switch } from 'react-router-dom'
 // -------------------------------------------------
 import '../styles/App.css'
 import Header from './Header'
@@ -12,53 +12,56 @@ import ReadingsList from './readings/ReadingsList'
 import OneCardSpread from './spreads/OneCardSpread'
 import ThreeCardSpread from './spreads/ThreeCardSpread'
 import FiveCardSpread from './spreads/FiveCardSpread'
+import history from '../history'
 // -------------------------------------------------
 
 class App extends Component {
     render () {
         return (
             <div className="container">
-                <BrowserRouter>
+                <Router history={history}>
                     <div>
                         <Header />
-                        <Route 
-                            path='/'
-                            exact component={Landing}
-                        />
-                        <Route 
-                            path='/readings/new'
-                            exact component={CreateReading}
-                        />
-                        <Route 
-                            path='/readings/edit/:id'
-                            exact component={EditReading}
-                        />
-                        <Route 
-                            path='/readings/delete/:id'
-                            exact component={DeleteReading}
-                        />
-                        <Route 
-                            path='/readings/:id'
-                            exact component={ViewReading}
-                        />
-                        <Route 
-                            path='/readings'
-                            exact component={ReadingsList}
-                        />
-                        <Route 
-                            path='/readings/onecard'
-                            exact component={OneCardSpread}
-                        />
-                        <Route 
-                            path='/readings/threecard'
-                            exact component={ThreeCardSpread}
-                        />
-                        <Route 
-                            path='/readings/fivecard'
-                            exact component={FiveCardSpread}
-                        />
+                        <Switch>
+                            <Route 
+                                path='/'
+                                exact component={Landing}
+                            />
+                            <Route 
+                                path='/readings/new'
+                                exact component={CreateReading}
+                            />
+                            <Route 
+                                path='/readings/edit/:id'
+                                exact component={EditReading}
+                            />
+                            <Route 
+                                path='/readings/delete/:id'
+                                exact component={DeleteReading}
+                            />
+                            <Route 
+                                path='/readings/:id'
+                                exact component={ViewReading}
+                            />
+                            <Route 
+                                path='/readings'
+                                exact component={ReadingsList}
+                            />
+                            <Route 
+                                path='/readings/onecard'
+                                exact component={OneCardSpread}
+                            />
+                            <Route 
+                                path='/readings/threecard'
+                                exact component={ThreeCardSpread}
+                            />
+                            <Route 
+                                path='/readings/fivecard'
+                                exact component={FiveCardSpread}
+                            />
+                        </Switch>
                     </div>
-                </BrowserRouter>
+                </Router>
             </div>
         )
     }

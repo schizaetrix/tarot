@@ -34,21 +34,23 @@ class ReadingsList extends Component {
         )
     }
     renderCreate () {
-        return (
-            <div style={{ textAlign: 'right' }}>
-                <Link
-                    to='/readings/new'
-                    className="
-                        waves-effect 
-                        waves-light 
-                        btn
-                        purple darken-3
-                    "
-                >
-                    New Reading
-                </Link>
-            </div>
-        )
+        if (this.props.isSignedIn) {
+            return (
+                <div style={{ textAlign: 'right' }}>
+                    <Link
+                        to='/readings/new'
+                        className="
+                            waves-effect 
+                            waves-light 
+                            btn
+                            purple darken-3
+                        "
+                    >
+                        New Reading
+                    </Link>
+                </div>
+            )
+        }
     }
     renderList () {
         return this.props.readings.map((reading) => {
@@ -88,7 +90,9 @@ class ReadingsList extends Component {
                         {this.renderAdmin(reading)}
                     </li>
                 )
-            } 
+            } else {
+                return []
+            }
         })
     }
     render () {

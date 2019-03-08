@@ -1,4 +1,5 @@
 import readings from '../apis/readings'
+import history from '../history'
 import { 
     SIGN_IN, 
     SIGN_OUT,
@@ -43,6 +44,10 @@ export const createReading = (formValues) => async (dispatch, getState) => {
         type: CREATE_READING,
         payload: response.data
     })
+    
+    const formObj = await getState().readings
+    const id = Object.keys(formObj)
+    history.push(`/readings/${id}`)
 }
 
 export const fetchReadings = () => async (dispatch) => {
