@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import React, { Component } from 'react'
 // -------------------------------------------------
 import Cards from '../images/cardsDB'
@@ -20,7 +21,10 @@ class Card extends Component {
                     </div>
                     <div 
                         className="card-title center-align"
-                        style={{ fontSize: this.props.style.fontSize }}
+                        style={_.pick(
+                            this.props.style,
+                            'fontSize'
+                        )}
                     >
                         {randomCard.title}
                     </div>

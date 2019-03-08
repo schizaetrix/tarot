@@ -5,12 +5,18 @@ import { fetchReading } from '../../actions'
 // -------------------------------------------------
 
 class ViewReading extends Component {
+    componentDidMount () {
+        this.props.fetchReading(this.props.match.params.id)
+    }
     render () {
+        if (!this.props.reading) {
+            return <div>Loading</div>
+        }
         return (
             <div id="background-image">
                 <div id="content-background">
                     <h2 className="white-text">
-                        ViewReading
+                        {this.props.reading.question}
                     </h2>
                 </div>
             </div>
@@ -19,8 +25,14 @@ class ViewReading extends Component {
 }
 
 // -------------------------------------------------
+const mapStateToProps = (state, ownProps) => {
+    return { 
+        reading: state.readings[ownProps.match.params.id] 
+    }
+}
+// -------------------------------------------------
 export default connect(
-    null,
+    mapStateToProps,
     { fetchReading }
 )(ViewReading)
 // -------------------------------------------------

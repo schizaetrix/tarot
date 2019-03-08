@@ -44,9 +44,9 @@ export const createReading = (formValues) => async (dispatch, getState) => {
         type: CREATE_READING,
         payload: response.data
     })
-    
+
     const formObj = await getState().readings
-    const id = Object.keys(formObj)
+    const id = Object.keys(formObj)[Object.keys(formObj).length - 1]
     history.push(`/readings/${id}`)
 }
 
@@ -72,6 +72,7 @@ export const editReading = (id, formValues) => async (dispatch) => {
         type: EDIT_READING,
         payload: response.data
     })
+    history.push('/readings')
 }
 
 export const deleteReading = (id) => async (dispatch) => {

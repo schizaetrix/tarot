@@ -48,15 +48,15 @@ class App extends Component {
                                 exact component={ReadingsList}
                             />
                             <Route 
-                                path='/readings/onecard'
+                                path='/spreads/onecard'
                                 exact component={OneCardSpread}
                             />
                             <Route 
-                                path='/readings/threecard'
+                                path='/spreads/threecard'
                                 exact component={ThreeCardSpread}
                             />
                             <Route 
-                                path='/readings/fivecard'
+                                path='/spreads/fivecard'
                                 exact component={FiveCardSpread}
                             />
                         </Switch>

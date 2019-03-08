@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import M from 'materialize-css'
 // -------------------------------------------------
 import { fetchReadings } from '../../actions'
+import Modal from '../Modal';
 // -------------------------------------------------
 
 class ReadingsList extends Component {
     componentDidMount () {
         this.props.fetchReadings()
+        M.AutoInit()
     }
     renderAdmin (reading) {
         return (
@@ -29,7 +32,13 @@ class ReadingsList extends Component {
                             delete
                         </i>
                     </Link>
+
                 </div>
+                <Modal 
+                    id="delete"
+                    to={`/readings/delete/${reading.id}`}
+                    message={`Delete reading: "${reading.question}"?`}
+                />
             </div>
         )
     }
@@ -40,11 +49,8 @@ class ReadingsList extends Component {
                     <Link
                         to='/readings/new'
                         className="
-                            waves-effect 
-                            waves-light 
-                            btn
-                            purple darken-3
-                        "
+                            waves-effect waves-light 
+                            btn purple darken-3"
                     >
                         New Reading
                     </Link>
@@ -62,10 +68,8 @@ class ReadingsList extends Component {
                     >
                         <i 
                             className="
-                                material-icons 
-                                circle
-                                purple darken-3
-                            "
+                                material-icons circle
+                                purple darken-3"
                         >
                             collections_bookmark
                         </i>
