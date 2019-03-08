@@ -6,6 +6,13 @@
       "userId": "104765169642899655804",
       "date": "03/07/2019",
       "id": 1
+    },
+    {
+      "question": "Testing to make sure that different readings show up for different users",
+      "spread": "Five Card Spread",
+      "userId": "104115147170088126221",
+      "date": "03/07/2019",
+      "id": 2
     }
   ]
 }

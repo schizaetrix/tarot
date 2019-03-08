@@ -5,10 +5,13 @@ import '../styles/App.css'
 import Header from './Header'
 import Landing from './Landing'
 import CreateReading from './readings/CreateReading'
+import EditReading from './readings/EditReading'
+import DeleteReading from './readings/DeleteReading'
+import ViewReading from './readings/ViewReading'
 import ReadingsList from './readings/ReadingsList'
-import OneCardSpread from './readings/OneCardSpread'
-import ThreeCardSpread from './readings/ThreeCardSpread'
-import FiveCardSpread from './readings/FiveCardSpread'
+import OneCardSpread from './spreads/OneCardSpread'
+import ThreeCardSpread from './spreads/ThreeCardSpread'
+import FiveCardSpread from './spreads/FiveCardSpread'
 // -------------------------------------------------
 
 class App extends Component {
@@ -25,6 +28,18 @@ class App extends Component {
                         <Route 
                             path='/readings/new'
                             exact component={CreateReading}
+                        />
+                        <Route 
+                            path='/readings/edit/:id'
+                            exact component={EditReading}
+                        />
+                        <Route 
+                            path='/readings/delete/:id'
+                            exact component={DeleteReading}
+                        />
+                        <Route 
+                            path='/readings/:id'
+                            exact component={ViewReading}
                         />
                         <Route 
                             path='/readings'

@@ -9,18 +9,26 @@ class ReadingsList extends Component {
     componentDidMount () {
         this.props.fetchReadings()
     }
-    renderAdmin () {
+    renderAdmin (reading) {
         return (
             <div className="secondary-content">
                 <div>
-                    <i className="material-icons white-text">
-                        edit
-                    </i>
+                    <Link
+                        to={`/readings/edit/${reading.id}`}
+                    >
+                        <i className="material-icons white-text">
+                            edit
+                        </i>
+                    </Link>
                 </div>
                 <div>
-                    <i className="material-icons white-text">
-                        delete
-                    </i>
+                    <Link
+                        to={`/readings/delete/${reading.id}`}
+                    >
+                        <i className="material-icons white-text">
+                            delete
+                        </i>
+                    </Link>
                 </div>
             </div>
         )
