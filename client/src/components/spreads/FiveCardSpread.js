@@ -3,41 +3,44 @@ import React from 'react'
 import Card from '../Card'
 // -------------------------------------------------
 
-const FiveCardSpread = () => {
+const FiveCardSpread = (props) => {
     return (
         <div 
             className="row"
             id="background-image"
         >
             <div id="content-background">
-                <h3 className="white-text">
-                    Five Card Spread
-                </h3>
+                <h4 className="white-text">
+                    {props.question}
+                </h4>
                 <div className="row">
                     <div className="col">
                         <Card 
                             style={{
-                                height: '285px',
+                                height: '290px',
                                 width: '180px',
-                                fontSize: '20px'
+                                fontSize: '18px',
+                                color: 'black'
                             }}
                         />
                     </div>
                     <div className="col">
                         <Card 
                             style={{
-                                height: '285px',
+                                height: '290px',
                                 width: '180px',
-                                fontSize: '20px'
+                                fontSize: '18px',
+                                color: 'black'
                             }}
                         />
                     </div>
                     <div className="col">
                         <Card 
                             style={{
-                                height: '285px',
+                                height: '290px',
                                 width: '180px',
-                                fontSize: '20px'
+                                fontSize: '18px',
+                                color: 'black'
                             }}
                         />
                     </div>
@@ -46,18 +49,20 @@ const FiveCardSpread = () => {
                     <div className="col">
                         <Card 
                             style={{
-                                height: '285px',
+                                height: '290px',
                                 width: '180px',
-                                fontSize: '20px'
+                                fontSize: '18px',
+                                color: 'black'
                             }}
                         />
                     </div>
                     <div className="col">
                         <Card 
                             style={{
-                                height: '285px',
+                                height: '290px',
                                 width: '180px',
-                                fontSize: '20px'
+                                fontSize: '18px',
+                                color: 'black'
                             }}
                         />
                     </div>

@@ -9,9 +9,6 @@ import EditReading from './readings/EditReading'
 import DeleteReading from './readings/DeleteReading'
 import ViewReading from './readings/ViewReading'
 import ReadingsList from './readings/ReadingsList'
-import OneCardSpread from './spreads/OneCardSpread'
-import ThreeCardSpread from './spreads/ThreeCardSpread'
-import FiveCardSpread from './spreads/FiveCardSpread'
 import history from '../history'
 // -------------------------------------------------
 
@@ -46,18 +43,6 @@ class App extends Component {
                             <Route 
                                 path='/readings'
                                 exact component={ReadingsList}
-                            />
-                            <Route 
-                                path='/spreads/onecard'
-                                exact component={OneCardSpread}
-                            />
-                            <Route 
-                                path='/spreads/threecard'
-                                exact component={ThreeCardSpread}
-                            />
-                            <Route 
-                                path='/spreads/fivecard'
-                                exact component={FiveCardSpread}
                             />
                         </Switch>
                     </div>

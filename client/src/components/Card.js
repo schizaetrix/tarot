@@ -23,7 +23,8 @@ class Card extends Component {
                         className="card-title center-align"
                         style={_.pick(
                             this.props.style,
-                            'fontSize'
+                            'fontSize',
+                            'color'
                         )}
                     >
                         {randomCard.title}

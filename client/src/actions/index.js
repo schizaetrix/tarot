@@ -12,6 +12,7 @@ import {
 // -------------------------------------------------
 
 export const signIn = (userId) => {
+    history.push('/')
     return {
         type: SIGN_IN,
         payload: userId
@@ -19,6 +20,7 @@ export const signIn = (userId) => {
 }
 
 export const signOut = () => {
+    history.push('/')
     return {
         type: SIGN_OUT
     }

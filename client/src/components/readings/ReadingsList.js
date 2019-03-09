@@ -1,16 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import M from 'materialize-css'
 // -------------------------------------------------
 import { fetchReadings } from '../../actions'
-import Modal from '../Modal';
 // -------------------------------------------------
 
 class ReadingsList extends Component {
     componentDidMount () {
         this.props.fetchReadings()
-        M.AutoInit()
     }
     renderAdmin (reading) {
         return (
@@ -34,11 +31,6 @@ class ReadingsList extends Component {
                     </Link>
 
                 </div>
-                <Modal 
-                    id="delete"
-                    to={`/readings/delete/${reading.id}`}
-                    message={`Delete reading: "${reading.question}"?`}
-                />
             </div>
         )
     }
@@ -51,6 +43,7 @@ class ReadingsList extends Component {
                         className="
                             waves-effect waves-light 
                             btn purple darken-3"
+                        style={{ margin: '10px' }}
                     >
                         New Reading
                     </Link>
@@ -74,12 +67,16 @@ class ReadingsList extends Component {
                             collections_bookmark
                         </i>
                         <span>
-                            <h6 
-                                className="question"
-                                style={{ fontWeight: 'bold' }}
+                            <Link 
+                                to={`/readings/${reading.id}`}
+                                className="question header"
+                                style={{ 
+                                    fontWeight: 'bold',
+                                    fontSize: '16px'
+                                }}
                             >
                                 {reading.question}  
-                            </h6>
+                            </Link>
                             <p className="spread">
                                 <small>
                                     {reading.spread}

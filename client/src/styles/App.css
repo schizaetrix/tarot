@@ -2,6 +2,10 @@
     width: 95%
 }
 
+a {
+    color: #FFF
+  }
+
 #landing-content {
     display: flex;
     flex-direction: column;
@@ -67,8 +71,8 @@
 }
 
 .collection, .collection-item:nth-of-type(odd) {
-    width: 85vw;
-    color: white;
+    width: 70vw;
+    color: #FFF;
     background-color: rgba(0, 0, 0, 0.15);
     border-bottom: 1px solid #6a1b9a !important;
     border-top: 1px solid #6a1b9a !important;
@@ -77,8 +81,8 @@
 }
 
 .collection, .collection-item:nth-of-type(even) {
-    width: 85vw;
-    color: white;
+    width: 70vw;
+    color: #FFF;
     background-color: rgba(0, 0, 0, 0.15);
     border-bottom: 1px solid #6a1b9a !important;
     border-top: 1px solid #6a1b9a !important;
