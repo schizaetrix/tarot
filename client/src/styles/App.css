@@ -1,5 +1,9 @@
+body {
+    background-color: #616161;
+}
+
 .container {
-    width: 95%
+    width: 98%
 }
 
 a {
@@ -88,4 +92,17 @@ a {
     border-top: 1px solid #6a1b9a !important;
     border-right: transparent !important;
     border-left: transparent !important;
+}
+
+.fixed-action-btn{
+    right: auto; 
+    top: 12%;
+    margin-left: 3%;
+    color: #6a1b9a;
+}
+
+.z-depth-5 {
+    box-shadow: 0 16px 24px 2px rgba(158,158,158, 0.14), 
+        0 6px 30px 5px rgba(158,158,158, 0.12), 
+        0 8px 10px -5px rgba(158,158,158, 0.3);
 }

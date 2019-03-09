@@ -9,7 +9,7 @@ class Card extends Component {
         var randomCard = Cards[Math.floor(Math.random()*Cards.length)]
         return (
             <div className="col">
-                <div className="card">
+                <div className="card z-depth-5">
                     <div className="card-image">
                         <img 
                             className="activator"

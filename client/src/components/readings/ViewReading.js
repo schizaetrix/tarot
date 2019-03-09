@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+// import { Link } from 'react-router-dom'
 // -------------------------------------------------
 import { fetchReading } from '../../actions'
+import ActionMenu from '../ActionMenu'
 import OneCardSpread from '../spreads/OneCardSpread'
 import ThreeCardSpread from '../spreads/ThreeCardSpread'
 import FiveCardSpread from '../spreads/FiveCardSpread'
@@ -33,8 +35,11 @@ class ViewReading extends Component {
             return <div>Loading...</div>
         }
         return (
-            <div className="white-text">
-                {this.renderSpread()}
+            <div>
+                <ActionMenu />
+                <div className="white-text">
+                    {this.renderSpread()}
+                </div>
             </div>
         )
     }

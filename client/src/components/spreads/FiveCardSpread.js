@@ -18,7 +18,7 @@ const FiveCardSpread = (props) => {
                         <Card 
                             style={{
                                 height: '290px',
-                                width: '180px',
+                                width: '170px',
                                 fontSize: '18px',
                                 color: 'black'
                             }}
@@ -28,7 +28,7 @@ const FiveCardSpread = (props) => {
                         <Card 
                             style={{
                                 height: '290px',
-                                width: '180px',
+                                width: '170px',
                                 fontSize: '18px',
                                 color: 'black'
                             }}
@@ -38,7 +38,7 @@ const FiveCardSpread = (props) => {
                         <Card 
                             style={{
                                 height: '290px',
-                                width: '180px',
+                                width: '170px',
                                 fontSize: '18px',
                                 color: 'black'
                             }}
@@ -50,7 +50,7 @@ const FiveCardSpread = (props) => {
                         <Card 
                             style={{
                                 height: '290px',
-                                width: '180px',
+                                width: '170px',
                                 fontSize: '18px',
                                 color: 'black'
                             }}
@@ -60,7 +60,7 @@ const FiveCardSpread = (props) => {
                         <Card 
                             style={{
                                 height: '290px',
-                                width: '180px',
+                                width: '170px',
                                 fontSize: '18px',
                                 color: 'black'
                             }}
