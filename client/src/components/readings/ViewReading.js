@@ -36,7 +36,9 @@ class ViewReading extends Component {
         }
         return (
             <div>
-                <ActionMenu />
+                <ActionMenu 
+                    reading={this.props.reading}
+                />
                 <div className="white-text">
                     {this.renderSpread()}
                 </div>

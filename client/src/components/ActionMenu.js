@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import M from 'materialize-css'
 // -------------------------------------------------
@@ -23,6 +22,7 @@ class ActionMenu extends Component {
     render () {
         return (
             <div className="fixed-action-btn">
+                {/* eslint-disable-next-line */}
                 <a 
                     className="
                         btn-floating btn-large 
@@ -38,20 +38,22 @@ class ActionMenu extends Component {
                 </a>
                 <ul>
                     <li>
-                        <a 
+                        <Link 
                             className="
                                 btn-floating grey 
                                 darken-3 tooltipped"
                             data-position="right"
                             data-tooltip="Edit Reading"
                             id="edit"
+                            to={`/readings/edit/${this.props.reading.id}`}
                         >
                             <i className="material-icons">
                                 edit
                             </i>
-                        </a>
+                        </Link>
                     </li>
                     <li>
+                        {/* eslint-disable-next-line */}
                         <a 
                             className="
                                 btn-floating grey 
@@ -76,7 +78,7 @@ class ActionMenu extends Component {
                             to="/readings"
                         >
                             <i className="material-icons">
-                                navigate_before
+                                arrow_back
                             </i>
                         </Link>
                     </li>
