@@ -1,7 +1,6 @@
 import _ from 'lodash'
 import React, { Component } from 'react'
 // -------------------------------------------------
-import Cards from '../images/cardsDB'
 import cardsBack from '../images/cards/Card Back - Death Rose Tiles.jpg'
 // -------------------------------------------------
 
@@ -30,13 +29,13 @@ class Card extends Component {
         )
     }
     renderCardBack () {
-        var randomCard = Cards[Math.floor(Math.random()*Cards.length)]
         return (
             <div className="flip-card-back">
                 <div className="card-image">
                     <img 
-                        src={randomCard.image}
-                        alt={randomCard.title}
+                        src={this.props.cardImage}
+                        alt={this.props.cardTitle}
+                        id={this.props.cardId}
                         style={this.props.style}
                     />
                 </div>
@@ -48,7 +47,7 @@ class Card extends Component {
                         // 'color'
                     )}
                 >
-                    {randomCard.title}
+                    {this.props.cardTitle}
                 </div>
             </div>
         )

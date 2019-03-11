@@ -7,6 +7,7 @@ import Landing from './Landing'
 import CreateReading from './readings/CreateReading'
 import EditReading from './readings/EditReading'
 import DeleteReading from './readings/DeleteReading'
+import SaveReading from './readings/SaveReading';
 import ViewReading from './readings/ViewReading'
 import ReadingsList from './readings/ReadingsList'
 import history from '../history'
@@ -15,7 +16,7 @@ import history from '../history'
 class App extends Component {
     render () {
         return (
-            <div className="container">
+            <div>
                 <Router history={history}>
                     <div>
                         <Header />
@@ -35,6 +36,10 @@ class App extends Component {
                             <Route 
                                 path='/readings/delete/:id'
                                 exact component={DeleteReading}
+                            />
+                            <Route 
+                                path='/readings/save/:id'
+                                exact component={SaveReading}
                             />
                             <Route 
                                 path='/readings/:id'

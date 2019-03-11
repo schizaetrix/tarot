@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Field, reduxForm } from 'redux-form'
+import { Link } from 'react-router-dom'
 import M from 'materialize-css'
 // -------------------------------------------------
 
@@ -85,9 +86,22 @@ class ReadingsForm extends Component {
                                 waves-effect 
                                 waves-light 
                             "
+                            style={{ marginLeft: '10px' }}
                         >
                             Submit
                         </button>
+                        <Link 
+                            to="/readings"
+                            className="
+                                btn
+                                purple darken-3
+                                waves-effect 
+                                waves-light 
+                            "
+                            style={{ marginLeft: '10px' }}
+                        >
+                            Cancel
+                        </Link>
                     </form>
                 </div>
             </div>

@@ -7,7 +7,8 @@ import {
     FETCH_READINGS,
     FETCH_READING,
     DELETE_READING,
-    EDIT_READING
+    EDIT_READING,
+    SAVE_READING
 } from './types'
 // -------------------------------------------------
 
@@ -28,21 +29,32 @@ export const signOut = () => {
 
 export const createReading = (formValues) => async (dispatch, getState) => {
     const { userId } = getState().auth
+
+    let cardImage = null
+    let cardTitle = null
+    let cardId = null
     
-    let date = new Date();
-    let dd = date.getDate();
-    let mm = date.getMonth() + 1; //January is 0!
-    let yyyy = date.getFullYear();
+    let date = new Date()
+    let dd = date.getDate()
+    let mm = date.getMonth() + 1
+    let yyyy = date.getFullYear()
     if (dd < 10) {
-    dd = '0' + dd;
+        dd = '0' + dd;
     }
     if (mm < 10) {
-    mm = '0' + mm;
+        mm = '0' + mm;
     }
     date = mm + '/' + dd + '/' + yyyy
 
-    const response = await readings.post('/readings', { ...formValues, userId, date })
-    dispatch({
+    const response = await readings.post('/readings', { 
+        ...formValues, 
+        userId,
+        cardImage,
+        cardTitle,
+        cardId,
+        date })
+    
+        dispatch({
         type: CREATE_READING,
         payload: response.data
     })
@@ -68,13 +80,31 @@ export const fetchReading = (id) => async (dispatch) => {
     })
 }
 
+export const saveReading = (id, state) => async (dispatch, getState) => {
+    let { cardImage, cardTitle, cardId } = getState().readings[id]
+    
+    cardImage = state.cardImage
+    cardTitle = state.cardTitle
+    cardId = state.cardId
+
+    const response = await readings.patch(`/readings/${id}`, {
+        cardImage,
+        cardTitle,
+        cardId
+    })
+    dispatch({
+        type: SAVE_READING,
+        payload: response.data
+    })
+}
+
 export const editReading = (id, formValues) => async (dispatch) => {
     const response = await readings.patch(`/readings/${id}`, formValues)
     dispatch({
         type: EDIT_READING,
         payload: response.data
     })
-    history.push('/readings')
+    history.push(`/readings/${id}`)
 }
 
 export const deleteReading = (id) => async (dispatch) => {

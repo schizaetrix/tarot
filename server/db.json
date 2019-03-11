@@ -1,46 +1,14 @@
 {
   "readings": [
     {
-      "question": "It should work this time... maybe ask a real question?",
+      "question": "Testing to make sure new state items make it into redux store",
       "spread": "One Card Spread",
       "userId": "104765169642899655804",
-      "date": "03/08/2019",
-      "id": 6
-    },
-    {
-      "question": "Just making sure that reading creation is still working...",
-      "spread": "Five Card Spread",
-      "userId": "104765169642899655804",
-      "date": "03/08/2019",
-      "id": 8
-    },
-    {
-      "question": "Wow... I really deleted all my readings??",
-      "spread": "One Card Spread",
-      "userId": "104115147170088126221",
-      "date": "03/08/2019",
-      "id": 9
-    },
-    {
-      "question": "Well, here are some new ones.",
-      "spread": "Five Card Spread",
-      "userId": "104115147170088126221",
-      "date": "03/08/2019",
-      "id": 10
-    },
-    {
-      "question": "Just to see a three-card spread, here's another...",
-      "spread": "Three Card Spread",
-      "userId": "104115147170088126221",
-      "date": "03/08/2019",
-      "id": 11
-    },
-    {
-      "question": "Type whatever",
-      "spread": "Three Card Spread",
-      "userId": "104765169642899655804",
-      "date": "03/09/2019",
-      "id": 12
+      "cardImage": "/static/media/Minors Cups 03.760af8fc.jpg",
+      "cardTitle": "Three of Cups",
+      "cardId": 24,
+      "date": "03/11/2019",
+      "id": 15
     }
   ]
 }

@@ -68,7 +68,7 @@ class ReadingsList extends Component {
                         </i>
                         <span>
                             <Link 
-                                to={`/readings/${reading.id}`}
+                                to={`/readings/save/${reading.id}`}
                                 className="question header"
                                 style={{ 
                                     fontWeight: 'bold',

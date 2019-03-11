@@ -7,7 +7,7 @@ import GoogleAuth from './GoogleAuth'
 class Header extends Component {
     render () {
         return (
-            <nav>
+            <nav style={{ position: 'fixed' }}>
                 <div className="nav-wrapper purple darken-3">
                     <Link 
                         to='/' 

@@ -9,4 +9,5 @@ export const FETCH_READINGS = "FETCH_READINGS"
 export const FETCH_READING = "FETCH_READING"
 export const DELETE_READING = "DELETE_READING"
 export const EDIT_READING = "EDIT_READING"
+export const SAVE_READING = "SAVE_READING"
 // -------------------------------------------------

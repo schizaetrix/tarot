@@ -3,37 +3,43 @@ import { connect } from 'react-redux'
 // -------------------------------------------------
 import { fetchReading } from '../../actions'
 import ActionMenu from '../ActionMenu'
-import OneCardSpread from '../spreads/OneCardSpread'
-import ThreeCardSpread from '../spreads/ThreeCardSpread'
-import FiveCardSpread from '../spreads/FiveCardSpread'
+import SaveOneCardSpread from '../spreads/SaveOneCardSpread'
+import SaveThreeCardSpread from '../spreads/SaveThreeCardSpread'
+import SaveFiveCardSpread from '../spreads/SaveFiveCardSpread'
 // -------------------------------------------------
 
-class ViewReading extends Component {
+class SaveReading extends Component {
     componentDidMount () {
         this.props.fetchReading(this.props.match.params.id)
     }
     renderSpread () {
-        const { question, spread, id } = this.props.reading
+        const { 
+            id, question, spread, 
+            cardImage, cardTitle, cardId
+        } = this.props.reading
         switch (spread) {
             case 'One Card Spread':
                 return (
-                    <OneCardSpread 
-                        question={question}
+                    <SaveOneCardSpread 
                         readingId={id}
+                        question={question}
+                        cardImage={cardImage}
+                        cardTitle={cardTitle}
+                        cardId={cardId}
                     />
                 )
             case 'Three Card Spread':
                 return (
-                    <ThreeCardSpread 
-                        question={question}
+                    <SaveThreeCardSpread 
                         readingId={id}
+                        question={question}
                     />
                 )
             default:
                 return (
-                    <FiveCardSpread 
-                        question={question} 
+                    <SaveFiveCardSpread 
                         readingId={id}
+                        question={question} 
                     />
                 )
         }
@@ -65,5 +71,5 @@ const mapStateToProps = (state, ownProps) => {
 export default connect(
     mapStateToProps,
     { fetchReading }
-)(ViewReading)
+)(SaveReading)
 // -------------------------------------------------

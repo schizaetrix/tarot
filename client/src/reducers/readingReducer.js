@@ -5,6 +5,7 @@ import {
     FETCH_READINGS,
     CREATE_READING,
     EDIT_READING,
+    SAVE_READING,
     DELETE_READING
 } from '../actions/types'
 // -------------------------------------------------
@@ -18,6 +19,8 @@ export default (state = {}, action) => {
         case CREATE_READING:
             return { ...state, [action.payload.id]: action.payload }
         case EDIT_READING:
+            return { ...state, [action.payload.id]: action.payload }
+        case SAVE_READING:
             return { ...state, [action.payload.id]: action.payload }
         case DELETE_READING:
             return _.omit(state, action.payload)
