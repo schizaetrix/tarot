@@ -30,9 +30,21 @@ export const signOut = () => {
 export const createReading = (formValues) => async (dispatch, getState) => {
     const { userId } = getState().auth
 
-    let cardImage = null
-    let cardTitle = null
-    let cardId = null
+    let cardImage1 = null
+    let cardTitle1 = null
+    let cardId1 = null
+    let cardImage2 = null
+    let cardTitle2 = null
+    let cardId2 = null
+    let cardImage3 = null
+    let cardTitle3 = null
+    let cardId3 = null
+    let cardImage4 = null
+    let cardTitle4 = null
+    let cardId4 = null
+    let cardImage5 = null
+    let cardTitle5 = null
+    let cardId5 = null
     
     let date = new Date()
     let dd = date.getDate()
@@ -47,12 +59,13 @@ export const createReading = (formValues) => async (dispatch, getState) => {
     date = mm + '/' + dd + '/' + yyyy
 
     const response = await readings.post('/readings', { 
-        ...formValues, 
-        userId,
-        cardImage,
-        cardTitle,
-        cardId,
-        date })
+        ...formValues, userId, date,
+        cardImage1, cardTitle1, cardId1,
+        cardImage2, cardTitle2, cardId2,
+        cardImage3, cardTitle3, cardId3,
+        cardImage4, cardTitle4, cardId4,
+        cardImage5, cardTitle5, cardId5
+    })
     
         dispatch({
         type: CREATE_READING,
@@ -80,17 +93,81 @@ export const fetchReading = (id) => async (dispatch) => {
     })
 }
 
-export const saveReading = (id, state) => async (dispatch, getState) => {
-    let { cardImage, cardTitle, cardId } = getState().readings[id]
+export const saveReadingOne = (id, state) => async (dispatch, getState) => {
+    let { cardImage1, cardTitle1, cardId1 } = getState().readings[id]
     
-    cardImage = state.cardImage
-    cardTitle = state.cardTitle
-    cardId = state.cardId
+    cardImage1 = state.cardImage1
+    cardTitle1 = state.cardTitle1
+    cardId1 = state.cardId1
 
     const response = await readings.patch(`/readings/${id}`, {
-        cardImage,
-        cardTitle,
-        cardId
+        cardImage1, cardTitle1, cardId1
+    })
+    dispatch({
+        type: SAVE_READING,
+        payload: response.data
+    })
+}
+
+export const saveReadingThree = (id, state) => async (dispatch, getState) => {
+    let { 
+        cardImage1, cardTitle1, cardId1,
+        cardImage2, cardTitle2, cardId2, 
+        cardImage3, cardTitle3, cardId3
+    } = getState().readings[id]
+    
+    cardImage1 = state.cardImage1
+    cardTitle1 = state.cardTitle1
+    cardId1 = state.cardId1
+    cardImage2 = state.cardImage2
+    cardTitle2 = state.cardTitle2
+    cardId2 = state.cardId2
+    cardImage3 = state.cardImage3
+    cardTitle3 = state.cardTitle3
+    cardId3 = state.cardId3
+
+    const response = await readings.patch(`/readings/${id}`, {
+        cardImage1, cardTitle1, cardId1,
+        cardImage2, cardTitle2, cardId2,
+        cardImage3, cardTitle3, cardId3
+    })
+    dispatch({
+        type: SAVE_READING,
+        payload: response.data
+    })
+}
+
+export const saveReadingFive = (id, state) => async (dispatch, getState) => {
+    let { 
+        cardImage1, cardTitle1, cardId1,
+        cardImage2, cardTitle2, cardId2, 
+        cardImage3, cardTitle3, cardId3,
+        cardImage4, cardTitle4, cardId4,
+        cardImage5, cardTitle5, cardId5 
+    } = getState().readings[id]
+    
+    cardImage1 = state.cardImage1
+    cardTitle1 = state.cardTitle1
+    cardId1 = state.cardId1
+    cardImage2 = state.cardImage2
+    cardTitle2 = state.cardTitle2
+    cardId2 = state.cardId2
+    cardImage3 = state.cardImage3
+    cardTitle3 = state.cardTitle3
+    cardId3 = state.cardId3
+    cardImage4 = state.cardImage4
+    cardTitle4 = state.cardTitle4
+    cardId4 = state.cardId4
+    cardImage5 = state.cardImage5
+    cardTitle5 = state.cardTitle5
+    cardId5 = state.cardId5
+
+    const response = await readings.patch(`/readings/${id}`, {
+        cardImage1, cardTitle1, cardId1,
+        cardImage2, cardTitle2, cardId2,
+        cardImage3, cardTitle3, cardId3,
+        cardImage4, cardTitle4, cardId4,
+        cardImage5, cardTitle5, cardId5
     })
     dispatch({
         type: SAVE_READING,

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 // -------------------------------------------------
-import { saveReading } from '../../actions'
+import { saveReadingOne } from '../../actions'
 import Cards from '../../images/cardsDB'
 import Card from '../Card'
 // -------------------------------------------------
@@ -14,15 +14,15 @@ class OneCardSpread extends Component {
         let title = randomCard.title
         let id = randomCard.id
         this.state = {
-            cardImage: image,
-            cardTitle: title,
-            cardId: id
+            cardImage1: image,
+            cardTitle1: title,
+            cardId1: id
         }
     }
     onClickSave = () => {
         const state = this.state
         const id = this.props.readingId
-        this.props.saveReading(id, state)
+        this.props.saveReadingOne(id, state)
     }
     render () {
         return (
@@ -41,10 +41,9 @@ class OneCardSpread extends Component {
                             fontSize: '30px',
                             color: 'black'
                         }}
-                        cardImage={this.state.cardImage}
-                        cardTitle={this.state.cardTitle}
-                        cardId={this.state.cardId}
-                        readingId={this.props.readingId}
+                        cardImage={this.state.cardImage1}
+                        cardTitle={this.state.cardTitle1}
+                        cardId={this.state.cardId1}
                     />
                 </div>
                 <button 
@@ -66,6 +65,6 @@ class OneCardSpread extends Component {
 // -------------------------------------------------
 export default connect(
     null,
-    { saveReading }
+    { saveReadingOne }
 )(OneCardSpread)
 // -------------------------------------------------

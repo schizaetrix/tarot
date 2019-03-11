@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 // -------------------------------------------------
-import { saveReading } from '../../actions'
+// import { saveReading } from '../../actions'
 import CardSaved from '../CardSaved'
 // -------------------------------------------------
 
@@ -28,10 +28,9 @@ class SaveOneCardSpread extends Component {
                             fontSize: '30px',
                             color: 'black'
                         }}
-                        cardImage={this.props.cardImage}
-                        cardTitle={this.props.cardTitle}
-                        cardId={this.props.cardId}
-                        readingId={this.props.readingId}
+                        cardImage={this.props.cardImage1}
+                        cardTitle={this.props.cardTitle1}
+                        cardId={this.props.cardId1}
                     />
                 </div>
                 {/* <button 
@@ -53,6 +52,6 @@ class SaveOneCardSpread extends Component {
 // -------------------------------------------------
 export default connect(
     null,
-    { saveReading }
+    // { saveReading }
 )(SaveOneCardSpread)
 // -------------------------------------------------
