@@ -103,7 +103,13 @@ class ReadingsList extends Component {
                     <h2 className="white-text">
                         Readings
                     </h2>
-                    <ul className="collection">
+                    <ul 
+                        className="collection"
+                        style={{ 
+                            overflow: 'auto',
+                            maxHeight: '60%'
+                        }}    
+                    >
                         {this.renderList()}
                     </ul>
                     {this.renderCreate()}

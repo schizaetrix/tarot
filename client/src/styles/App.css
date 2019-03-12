@@ -121,15 +121,9 @@ a {
 
 /* Misc. styles -------------------------------- */
 .fixed-action-btn {
+    position: fixed;
     right: auto; 
     top: 12%;
     margin-left: 3%;
-    color: #6a1b9a;
-}
-#save-btn {
-    position: fixed;
-    left: 1120px;
-    bottom: 60px;
-    margin-right: 3%;
     color: #6a1b9a;
 }

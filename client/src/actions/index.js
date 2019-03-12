@@ -107,6 +107,7 @@ export const saveReadingOne = (id, state) => async (dispatch, getState) => {
         type: SAVE_READING,
         payload: response.data
     })
+    history.push(`/readings/save/${id}`)
 }
 
 export const saveReadingThree = (id, state) => async (dispatch, getState) => {
@@ -135,6 +136,7 @@ export const saveReadingThree = (id, state) => async (dispatch, getState) => {
         type: SAVE_READING,
         payload: response.data
     })
+    history.push(`/readings/save/${id}`)
 }
 
 export const saveReadingFive = (id, state) => async (dispatch, getState) => {
@@ -173,6 +175,7 @@ export const saveReadingFive = (id, state) => async (dispatch, getState) => {
         type: SAVE_READING,
         payload: response.data
     })
+    history.push(`/readings/save/${id}`)
 }
 
 export const editReading = (id, formValues) => async (dispatch) => {

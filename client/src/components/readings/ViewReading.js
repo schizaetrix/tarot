@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 // -------------------------------------------------
 import { fetchReading } from '../../actions'
-import ActionMenu from '../ActionMenu'
+// import ActionMenu from '../ActionMenu'
 import OneCardSpread from '../spreads/OneCardSpread'
 import ThreeCardSpread from '../spreads/ThreeCardSpread'
 import FiveCardSpread from '../spreads/FiveCardSpread'
@@ -44,9 +44,6 @@ class ViewReading extends Component {
         }
         return (
             <div>
-                <ActionMenu 
-                    reading={this.props.reading}
-                />
                 <div className="white-text">
                     {this.renderSpread()}
                 </div>

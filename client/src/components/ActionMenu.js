@@ -26,6 +26,7 @@ class ActionMenu extends Component {
                 <a 
                     className="
                         btn-floating btn-large 
+                        waves-effect waves-light
                         purple darken-3
                         tooltipped"
                     data-position="right"
@@ -41,6 +42,7 @@ class ActionMenu extends Component {
                         <Link 
                             className="
                                 btn-floating grey 
+                                waves-effect waves-light
                                 darken-3 tooltipped"
                             data-position="right"
                             data-tooltip="Edit Reading"
@@ -57,6 +59,7 @@ class ActionMenu extends Component {
                         <a 
                             className="
                                 btn-floating grey 
+                                waves-effect waves-light
                                 darken-3 tooltipped"
                             data-position="right"
                             data-tooltip="Reading Notes"
@@ -71,6 +74,7 @@ class ActionMenu extends Component {
                         <Link 
                             className="
                                 btn-floating grey 
+                                waves-effect waves-light
                                 darken-3 tooltipped"
                             data-position="right"
                             data-tooltip="Readings List"

@@ -30,6 +30,18 @@ class OneCardSpread extends Component {
                 className="row"
                 id="background-image"
             >
+                <button 
+                    className="                        
+                        btn-floating btn-large 
+                        waves-effect waves-light
+                        purple darken-3
+                        fixed-action-btn"
+                    onClick={this.onClickSave}
+                >
+                    <i className="large material-icons">
+                        save
+                    </i>
+                </button>
                 <div id="content-background">
                     <h4 className="white-text">
                         {this.props.question}
@@ -46,17 +58,6 @@ class OneCardSpread extends Component {
                         cardId={this.state.cardId1}
                     />
                 </div>
-                <button 
-                    className="                        
-                        btn-floating btn-large 
-                        purple darken-3"
-                    onClick={this.onClickSave}
-                    id="save-btn"
-                >
-                    <i className="large material-icons">
-                        save
-                    </i>
-                </button>
             </div>
         )
     }
