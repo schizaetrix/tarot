@@ -6,18 +6,10 @@ import CardSaved from '../CardSaved'
 // -------------------------------------------------
 
 class SaveOneCardSpread extends Component {
-    // onClickSave = () => {
-    //     const state = this.state
-    //     const id = this.props.readingId
-    //     this.props.saveReading(id, state)
-    // }
     render () {
         return (
-            <div 
-                className="row"
-                id="background-image"
-            >
-                <div id="content-background">
+            <div className="row background-image">
+                <div className="content-background">
                     <h4 className="white-text">
                         {this.props.question}
                     </h4>
@@ -33,17 +25,6 @@ class SaveOneCardSpread extends Component {
                         cardId={this.props.cardId1}
                     />
                 </div>
-                {/* <button 
-                    className="                        
-                        btn-floating btn-large 
-                        purple darken-3"
-                    onClick={this.onClickSave}
-                    id="save-btn"
-                >
-                    <i className="large material-icons">
-                        save
-                    </i>
-                </button> */}
             </div>
         )
     }

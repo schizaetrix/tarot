@@ -6,7 +6,7 @@ import M from 'materialize-css'
 
 class ReadingsForm extends Component {
     componentDidMount () {
-        M.AutoInit() // initializes materialize-css elements
+        M.AutoInit()
     }
     renderError ({ error, touched }) {
         if ( touched && error) {
@@ -55,11 +55,8 @@ class ReadingsForm extends Component {
     }
     render () {
         return (
-            <div 
-                className="row"
-                id="background-image"
-            >
-                <div id="content-background">
+            <div className="row background-image">
+                <div className="content-background">
                     <h3 className="white-text">
                         {this.props.header}
                     </h3>

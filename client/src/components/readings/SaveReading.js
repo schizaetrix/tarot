@@ -1,8 +1,11 @@
+import _ from 'lodash'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import M from 'materialize-css'
 // -------------------------------------------------
-import { fetchReading } from '../../actions'
+import { fetchReading, noteReading } from '../../actions'
 import ActionMenu from '../ActionMenu'
+import SideNote from '../SideNote'
 import SaveOneCardSpread from '../spreads/SaveOneCardSpread'
 import SaveThreeCardSpread from '../spreads/SaveThreeCardSpread'
 import SaveFiveCardSpread from '../spreads/SaveFiveCardSpread'
@@ -10,6 +13,7 @@ import SaveFiveCardSpread from '../spreads/SaveFiveCardSpread'
 
 class SaveReading extends Component {
     componentDidMount () {
+        M.AutoInit()
         this.props.fetchReading(this.props.match.params.id)
     }
     renderSpread () {
@@ -72,6 +76,9 @@ class SaveReading extends Component {
                 )
         }
     }
+    onSubmit = (formValues) => {
+        this.props.noteReading(this.props.match.params.id, formValues)
+    }
     render () {
         if (!this.props.reading) {
             return <div>Loading...</div>
@@ -84,6 +91,14 @@ class SaveReading extends Component {
                 <div className="white-text">
                     {this.renderSpread()}
                 </div>
+                <SideNote 
+                    initialValues={_.pick(
+                        this.props.reading,
+                        'interpretation',
+                        'retrospective'
+                    )}
+                    onSubmit={this.onSubmit}
+                />
             </div>
         )
     }
@@ -98,6 +113,6 @@ const mapStateToProps = (state, ownProps) => {
 // -------------------------------------------------
 export default connect(
     mapStateToProps,
-    { fetchReading }
+    { fetchReading, noteReading }
 )(SaveReading)
 // -------------------------------------------------

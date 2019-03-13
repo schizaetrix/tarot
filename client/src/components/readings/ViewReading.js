@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 // -------------------------------------------------
 import { fetchReading } from '../../actions'
-// import ActionMenu from '../ActionMenu'
 import OneCardSpread from '../spreads/OneCardSpread'
 import ThreeCardSpread from '../spreads/ThreeCardSpread'
 import FiveCardSpread from '../spreads/FiveCardSpread'

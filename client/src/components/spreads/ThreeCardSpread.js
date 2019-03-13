@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import M from 'materialize-css'
 // -------------------------------------------------
 import { saveReadingThree } from '../../actions'
 import Cards from '../../images/cardsDB'
@@ -33,6 +34,10 @@ class ThreeCardSpread extends Component {
             cardId3: id3
         }
     }
+    componentDidMount () {
+        let saveTooltip = document.getElementById('save')
+        M.Tooltip.init(saveTooltip, {})
+    }
     onClickSave = () => {
         const state = this.state
         const id = this.props.readingId
@@ -40,23 +45,23 @@ class ThreeCardSpread extends Component {
     }
     render () {
         return (
-            <div 
-                className="row"
-                id="background-image"
-            >
+            <div className="row background-image">
                 <button 
                     className="                        
                         btn-floating btn-large 
                         waves-effect waves-light
                         purple darken-3
-                        fixed-action-btn"
+                        fixed-action-btn tooltipped"
+                    data-position="right"
+                    data-tooltip="Save Your Cards"
+                    id="save"
                     onClick={this.onClickSave}
                 >
                     <i className="large material-icons">
                         save
                     </i>
                 </button>
-                <div id="content-background">
+                <div className="content-background">
                     <h4 className="white-text">
                         {this.props.question}
                     </h4>

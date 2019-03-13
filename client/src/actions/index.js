@@ -8,7 +8,8 @@ import {
     FETCH_READING,
     DELETE_READING,
     EDIT_READING,
-    SAVE_READING
+    SAVE_READING,
+    NOTE_READING
 } from './types'
 // -------------------------------------------------
 
@@ -45,6 +46,8 @@ export const createReading = (formValues) => async (dispatch, getState) => {
     let cardImage5 = null
     let cardTitle5 = null
     let cardId5 = null
+    let interpretation = null
+    let retrospective = null
     
     let date = new Date()
     let dd = date.getDate()
@@ -64,7 +67,8 @@ export const createReading = (formValues) => async (dispatch, getState) => {
         cardImage2, cardTitle2, cardId2,
         cardImage3, cardTitle3, cardId3,
         cardImage4, cardTitle4, cardId4,
-        cardImage5, cardTitle5, cardId5
+        cardImage5, cardTitle5, cardId5,
+        interpretation, retrospective
     })
     
         dispatch({
@@ -173,6 +177,15 @@ export const saveReadingFive = (id, state) => async (dispatch, getState) => {
     })
     dispatch({
         type: SAVE_READING,
+        payload: response.data
+    })
+    history.push(`/readings/save/${id}`)
+}
+
+export const noteReading = (id, formValues) => async (dispatch) => {
+    const response = await readings.patch(`/readings/${id}`, formValues)
+    dispatch({
+        type: EDIT_READING,
         payload: response.data
     })
     history.push(`/readings/save/${id}`)

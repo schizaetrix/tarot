@@ -18,14 +18,14 @@ a {
     text-align: center;
     height: 100vh
 }
-#content-background {
+.content-background {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh
 }
-#background-image {
+.background-image {
     background: linear-gradient( 
         rgba(0, 0, 0, 0.75), 
         rgba(0, 0, 0, 0.75) 
@@ -62,7 +62,14 @@ a {
     border-bottom: 1px solid #6a1b9a !important;
     box-shadow: 0 1px 0 0 #000;
 }
-
+textarea.materialize-textarea {
+    color: #FFF;
+    height: 15rem
+}
+textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #6a1b9a !important;
+    box-shadow: 0 1px 0 0 #000;
+}
 /* Card styles -------------------------------- */
 .card-style {
     margin: 15px;

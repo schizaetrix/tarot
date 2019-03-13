@@ -6,11 +6,8 @@ import CardSaved from '../CardSaved'
 class SaveThreeCardSpread extends Component {
     render () {
         return (
-            <div 
-                className="row"
-                id="background-image"
-            >
-                <div id="content-background">
+            <div className="row background-image">
+                <div className="content-background">
                     <h4 className="white-text">
                         {this.props.question}
                     </h4>

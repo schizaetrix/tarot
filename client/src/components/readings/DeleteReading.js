@@ -51,8 +51,8 @@ class DeleteReading extends Component {
     }
     render () {
         return (
-            <div id="background-image">
-                <div id="content-background">
+            <div className="background-image">
+                <div className="content-background">
                     <div className="modal-trigger" href="#delete">
                         <Modal 
                             id="delete"

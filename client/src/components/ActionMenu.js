@@ -60,7 +60,9 @@ class ActionMenu extends Component {
                             className="
                                 btn-floating grey 
                                 waves-effect waves-light
-                                darken-3 tooltipped"
+                                darken-3 tooltipped
+                                sidenav-trigger"
+                            data-target="slide-out"
                             data-position="right"
                             data-tooltip="Reading Notes"
                             id="note"

@@ -98,8 +98,8 @@ class ReadingsList extends Component {
     }
     render () {
         return (
-            <div id="background-image">
-                <div id="content-background">
+            <div className="background-image">
+                <div className="content-background">
                     <h2 className="white-text">
                         Readings
                     </h2>
