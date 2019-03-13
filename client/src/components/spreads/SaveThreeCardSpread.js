@@ -23,6 +23,8 @@ class SaveThreeCardSpread extends Component {
                                 cardImage={this.props.cardImage1}
                                 cardTitle={this.props.cardTitle1}
                                 cardId={this.props.cardId1}
+                                cardTooltip={this.props.cardTooltip1}
+                                tooltipPosition="left"
                             />
                         </div>
                         <div className="col">
@@ -36,6 +38,8 @@ class SaveThreeCardSpread extends Component {
                                 cardImage={this.props.cardImage2}
                                 cardTitle={this.props.cardTitle2}
                                 cardId={this.props.cardId2}
+                                cardTooltip={this.props.cardTooltip2}
+                                tooltipPosition="left"
                             />
                         </div>
                         <div className="col">
@@ -49,6 +53,8 @@ class SaveThreeCardSpread extends Component {
                                 cardImage={this.props.cardImage3}
                                 cardTitle={this.props.cardTitle3}
                                 cardId={this.props.cardId3}
+                                cardTooltip={this.props.cardTooltip3}
+                                tooltipPosition="right"
                             />
                         </div>
                     </div>

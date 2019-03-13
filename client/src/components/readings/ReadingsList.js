@@ -52,7 +52,7 @@ class ReadingsList extends Component {
         }
     }
     renderList () {
-        return this.props.readings.map((reading) => {
+        return this.props.readings.reverse().map((reading) => {
             if (reading.userId === this.props.currentUserId) {
                 return (
                     <li 

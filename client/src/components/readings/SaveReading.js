@@ -19,11 +19,11 @@ class SaveReading extends Component {
     renderSpread () {
         const { 
             id, question, spread, 
-            cardImage1, cardTitle1, cardId1,
-            cardImage2, cardTitle2, cardId2,
-            cardImage3, cardTitle3, cardId3,
-            cardImage4, cardTitle4, cardId4,
-            cardImage5, cardTitle5, cardId5
+            cardImage1, cardTitle1, cardId1, cardTooltip1,
+            cardImage2, cardTitle2, cardId2, cardTooltip2,
+            cardImage3, cardTitle3, cardId3, cardTooltip3,
+            cardImage4, cardTitle4, cardId4, cardTooltip4,
+            cardImage5, cardTitle5, cardId5, cardTooltip5,
         } = this.props.reading
         switch (spread) {
             case 'One Card Spread':
@@ -34,6 +34,7 @@ class SaveReading extends Component {
                         cardImage1={cardImage1}
                         cardTitle1={cardTitle1}
                         cardId1={cardId1}
+                        cardTooltip1={cardTooltip1}
                     />
                 )
             case 'Three Card Spread':
@@ -44,12 +45,15 @@ class SaveReading extends Component {
                         cardImage1={cardImage1}
                         cardTitle1={cardTitle1}
                         cardId1={cardId1}
+                        cardTooltip1={cardTooltip1}
                         cardImage2={cardImage2}
                         cardTitle2={cardTitle2}
                         cardId2={cardId2}
+                        cardTooltip2={cardTooltip2}
                         cardImage3={cardImage3}
                         cardTitle3={cardTitle3}
                         cardId3={cardId3}
+                        cardTooltip3={cardTooltip3}
                     />
                 )
             default:
@@ -60,18 +64,23 @@ class SaveReading extends Component {
                         cardImage1={cardImage1}
                         cardTitle1={cardTitle1}
                         cardId1={cardId1}
+                        cardTooltip1={cardTooltip1}
                         cardImage2={cardImage2}
                         cardTitle2={cardTitle2}
                         cardId2={cardId2}
+                        cardTooltip2={cardTooltip2}
                         cardImage3={cardImage3}
                         cardTitle3={cardTitle3}
                         cardId3={cardId3}
+                        cardTooltip3={cardTooltip3}
                         cardImage4={cardImage4}
                         cardTitle4={cardTitle4}
                         cardId4={cardId4}
+                        cardTooltip4={cardTooltip4}
                         cardImage5={cardImage5}
                         cardTitle5={cardTitle5}
                         cardId5={cardId5}
+                        cardTooltip5={cardTooltip5}
                     />
                 )
         }

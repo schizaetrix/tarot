@@ -14,10 +14,9 @@ class OneCardSpread extends Component {
         let image = randomCard.image
         let title = randomCard.title
         let id = randomCard.id
+        let tooltip = randomCard.tooltip
         this.state = {
-            cardImage1: image,
-            cardTitle1: title,
-            cardId1: id
+            card1: { image, title, id, tooltip }
         }
     }
     componentDidMount () {
@@ -58,9 +57,10 @@ class OneCardSpread extends Component {
                             fontSize: '30px',
                             color: 'black'
                         }}
-                        cardImage={this.state.cardImage1}
-                        cardTitle={this.state.cardTitle1}
-                        cardId={this.state.cardId1}
+                        cardImage={this.state.card1.image}
+                        cardTitle={this.state.card1.title}
+                        cardId={this.state.card1.id}
+                        cardTooltip={this.state.card1.tooltip}
                     />
                 </div>
             </div>

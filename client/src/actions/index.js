@@ -31,21 +31,36 @@ export const signOut = () => {
 export const createReading = (formValues) => async (dispatch, getState) => {
     const { userId } = getState().auth
 
+    // let cardImages = new Array(5)
+    // cardImages.fill(null)
+    // let cardTitles = newArray(5)
+    // cardTitles.fill(null)
+    // let cardIds = new Array(5)
+    // cardIds.fill(null)
+    // let cardTooltips = new Array(5)
+    // cardTooltips.fill
+    // The post request doesn't want to accept arr[0] format?
+
     let cardImage1 = null
     let cardTitle1 = null
     let cardId1 = null
+    let cardTooltip1 = null
     let cardImage2 = null
     let cardTitle2 = null
     let cardId2 = null
+    let cardTooltip2 = null
     let cardImage3 = null
     let cardTitle3 = null
     let cardId3 = null
+    let cardTooltip3 = null
     let cardImage4 = null
     let cardTitle4 = null
     let cardId4 = null
+    let cardTooltip4 = null
     let cardImage5 = null
     let cardTitle5 = null
     let cardId5 = null
+    let cardTooltip5 = null
     let interpretation = null
     let retrospective = null
     
@@ -63,11 +78,11 @@ export const createReading = (formValues) => async (dispatch, getState) => {
 
     const response = await readings.post('/readings', { 
         ...formValues, userId, date,
-        cardImage1, cardTitle1, cardId1,
-        cardImage2, cardTitle2, cardId2,
-        cardImage3, cardTitle3, cardId3,
-        cardImage4, cardTitle4, cardId4,
-        cardImage5, cardTitle5, cardId5,
+        cardImage1, cardTitle1, cardId1, cardTooltip1,
+        cardImage2, cardTitle2, cardId2, cardTooltip2,
+        cardImage3, cardTitle3, cardId3, cardTooltip3,
+        cardImage4, cardTitle4, cardId4, cardTooltip4,
+        cardImage5, cardTitle5, cardId5, cardTooltip5,
         interpretation, retrospective
     })
     
@@ -98,14 +113,17 @@ export const fetchReading = (id) => async (dispatch) => {
 }
 
 export const saveReadingOne = (id, state) => async (dispatch, getState) => {
-    let { cardImage1, cardTitle1, cardId1 } = getState().readings[id]
+    let { 
+        cardImage1, cardTitle1, cardId1, cardTooltip1 
+    } = getState().readings[id]
     
-    cardImage1 = state.cardImage1
-    cardTitle1 = state.cardTitle1
-    cardId1 = state.cardId1
+    cardImage1 = state.card1.image
+    cardTitle1 = state.card1.title
+    cardId1 = state.card1.id
+    cardTooltip1 = state.card1.tooltip
 
     const response = await readings.patch(`/readings/${id}`, {
-        cardImage1, cardTitle1, cardId1
+        cardImage1, cardTitle1, cardId1, cardTooltip1
     })
     dispatch({
         type: SAVE_READING,
@@ -116,25 +134,28 @@ export const saveReadingOne = (id, state) => async (dispatch, getState) => {
 
 export const saveReadingThree = (id, state) => async (dispatch, getState) => {
     let { 
-        cardImage1, cardTitle1, cardId1,
-        cardImage2, cardTitle2, cardId2, 
-        cardImage3, cardTitle3, cardId3
+        cardImage1, cardTitle1, cardId1, cardTooltip1,
+        cardImage2, cardTitle2, cardId2, cardTooltip2,
+        cardImage3, cardTitle3, cardId3, cardTooltip3,
     } = getState().readings[id]
     
-    cardImage1 = state.cardImage1
-    cardTitle1 = state.cardTitle1
-    cardId1 = state.cardId1
-    cardImage2 = state.cardImage2
-    cardTitle2 = state.cardTitle2
-    cardId2 = state.cardId2
-    cardImage3 = state.cardImage3
-    cardTitle3 = state.cardTitle3
-    cardId3 = state.cardId3
+    cardImage1 = state.card1.image
+    cardTitle1 = state.card1.title
+    cardId1 = state.card1.id
+    cardTooltip1 = state.card1.tooltip
+    cardImage2 = state.card2.image
+    cardTitle2 = state.card2.title
+    cardId2 = state.card2.id
+    cardTooltip2 = state.card2.tooltip
+    cardImage3 = state.card3.image
+    cardTitle3 = state.card3.title
+    cardId3 = state.card2.id
+    cardTooltip3 = state.card3.tooltip
 
     const response = await readings.patch(`/readings/${id}`, {
-        cardImage1, cardTitle1, cardId1,
-        cardImage2, cardTitle2, cardId2,
-        cardImage3, cardTitle3, cardId3
+        cardImage1, cardTitle1, cardId1, cardTooltip1,
+        cardImage2, cardTitle2, cardId2, cardTooltip2,
+        cardImage3, cardTitle3, cardId3, cardTooltip3
     })
     dispatch({
         type: SAVE_READING,
@@ -145,35 +166,40 @@ export const saveReadingThree = (id, state) => async (dispatch, getState) => {
 
 export const saveReadingFive = (id, state) => async (dispatch, getState) => {
     let { 
-        cardImage1, cardTitle1, cardId1,
-        cardImage2, cardTitle2, cardId2, 
-        cardImage3, cardTitle3, cardId3,
-        cardImage4, cardTitle4, cardId4,
-        cardImage5, cardTitle5, cardId5 
+        cardImage1, cardTitle1, cardId1, cardTooltip1,
+        cardImage2, cardTitle2, cardId2, cardTooltip2,
+        cardImage3, cardTitle3, cardId3, cardTooltip3,
+        cardImage4, cardTitle4, cardId4, cardTooltip4,
+        cardImage5, cardTitle5, cardId5, cardTooltip5
     } = getState().readings[id]
     
-    cardImage1 = state.cardImage1
-    cardTitle1 = state.cardTitle1
-    cardId1 = state.cardId1
-    cardImage2 = state.cardImage2
-    cardTitle2 = state.cardTitle2
-    cardId2 = state.cardId2
-    cardImage3 = state.cardImage3
-    cardTitle3 = state.cardTitle3
-    cardId3 = state.cardId3
-    cardImage4 = state.cardImage4
-    cardTitle4 = state.cardTitle4
-    cardId4 = state.cardId4
-    cardImage5 = state.cardImage5
-    cardTitle5 = state.cardTitle5
-    cardId5 = state.cardId5
+    cardImage1 = state.card1.image
+    cardTitle1 = state.card1.title
+    cardId1 = state.card1.id
+    cardTooltip1 = state.card1.tooltip
+    cardImage2 = state.card2.image
+    cardTitle2 = state.card2.title
+    cardId2 = state.card2.id
+    cardTooltip2 = state.card2.tooltip
+    cardImage3 = state.card3.image
+    cardTitle3 = state.card3.title
+    cardId3 = state.card2.id
+    cardTooltip3 = state.card3.tooltip
+    cardImage4 = state.card4.image
+    cardTitle4 = state.card4.title
+    cardId4 = state.card4.id
+    cardTooltip4 = state.card4.tooltip
+    cardImage5 = state.card5.image
+    cardTitle5 = state.card5.title
+    cardId5 = state.card5.id
+    cardTooltip5 = state.card5.tooltip
 
     const response = await readings.patch(`/readings/${id}`, {
-        cardImage1, cardTitle1, cardId1,
-        cardImage2, cardTitle2, cardId2,
-        cardImage3, cardTitle3, cardId3,
-        cardImage4, cardTitle4, cardId4,
-        cardImage5, cardTitle5, cardId5
+        cardImage1, cardTitle1, cardId1, cardTooltip1,
+        cardImage2, cardTitle2, cardId2, cardTooltip2,
+        cardImage3, cardTitle3, cardId3, cardTooltip3,
+        cardImage4, cardTitle4, cardId4, cardTooltip4,
+        cardImage5, cardTitle5, cardId5, cardTooltip5
     })
     dispatch({
         type: SAVE_READING,

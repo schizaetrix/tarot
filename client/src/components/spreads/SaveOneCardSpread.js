@@ -23,6 +23,8 @@ class SaveOneCardSpread extends Component {
                         cardImage={this.props.cardImage1}
                         cardTitle={this.props.cardTitle1}
                         cardId={this.props.cardId1}
+                        cardTooltip={this.props.cardTooltip1}
+                        tooltipPosition="left"
                     />
                 </div>
             </div>
