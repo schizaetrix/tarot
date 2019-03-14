@@ -45,6 +45,25 @@ a {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+.reading-card-background {
+    box-shadow: 5px 5px 4 0 #000;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px
+}
+.reading-card-icon {
+    display: flex;
+    align-items: flex-end !important;
+    justify-content: flex-end !important;
+}
+.card-title {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+}
 
 /* Form styles -------------------------------- */
 .input-field input[type=text]:focus {
@@ -72,7 +91,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 }
 /* Card styles -------------------------------- */
 .card-style {
-    margin: 15px;
+    margin: 15px !important;
     display: flex;
     align-items: center;
     justify-content: center;

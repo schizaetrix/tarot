@@ -52,6 +52,9 @@ class SideNote extends Component {
     }
     onSubmit = (formValues) => {
         this.props.onSubmit(formValues)
+        M.toast({
+            html: 'Your notes have been saved!'
+        })
     }
     render () {
         return (

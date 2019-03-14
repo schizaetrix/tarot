@@ -47,7 +47,7 @@ class ActionMenu extends Component {
                             data-position="right"
                             data-tooltip="Edit Reading"
                             id="edit"
-                            to={`/readings/edit/${this.props.reading.id}`}
+                            to={`/readings/edit/${this.props.reading}`}
                         >
                             <i className="material-icons">
                                 edit

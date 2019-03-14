@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import M from 'materialize-css'
 // -------------------------------------------------
 import { fetchReading, noteReading } from '../../actions'
-import ActionMenu from '../ActionMenu'
 import SideNote from '../SideNote'
 import SaveOneCardSpread from '../spreads/SaveOneCardSpread'
 import SaveThreeCardSpread from '../spreads/SaveThreeCardSpread'
@@ -94,9 +93,6 @@ class SaveReading extends Component {
         }
         return (
             <div>
-                <ActionMenu 
-                    reading={this.props.reading}
-                />
                 <div className="white-text">
                     {this.renderSpread()}
                 </div>

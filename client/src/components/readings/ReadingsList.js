@@ -29,7 +29,6 @@ class ReadingsList extends Component {
                             delete
                         </i>
                     </Link>
-
                 </div>
             </div>
         )

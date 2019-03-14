@@ -16,7 +16,7 @@ const Modal = (props) => {
                 <h5>{props.title}</h5>
                 <p>{props.content}</p>
             </div>
-            <div className="modal-footer">
+            <div className="modal-footer" style={{ paddingRight: '15px' }}>
                 {props.actions}
             </div>
         </div>,

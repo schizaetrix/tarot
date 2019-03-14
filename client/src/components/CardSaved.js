@@ -12,7 +12,14 @@ class CardSaved extends Component {
         return (
             <div className="col">
                 <div className="card-style">
-                    <div className="card-image">
+                    <div 
+                        className="card-image"
+                        style={_.pick(
+                            this.props.style,
+                            'height',
+                            'width'
+                        )}
+                    >
                         <img 
                             className="tooltipped"
                             src={this.props.cardImage}

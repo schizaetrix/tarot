@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 // -------------------------------------------------
-// import { saveReading } from '../../actions'
 import CardSaved from '../CardSaved'
+import ActionMenu from '../ActionMenu'
 // -------------------------------------------------
 
 class SaveOneCardSpread extends Component {
     render () {
         return (
             <div className="row background-image">
+                <ActionMenu 
+                    reading={this.props.readingId}
+                />
                 <div className="content-background">
                     <h4 className="white-text">
                         {this.props.question}
@@ -33,8 +35,5 @@ class SaveOneCardSpread extends Component {
 }
 
 // -------------------------------------------------
-export default connect(
-    null,
-    // { saveReading }
-)(SaveOneCardSpread)
+export default SaveOneCardSpread
 // -------------------------------------------------

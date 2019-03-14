@@ -72,6 +72,9 @@ class FiveCardSpread extends Component {
         const state = this.state
         const id = this.props.readingId
         this.props.saveReadingFive(id, state)
+        M.toast({
+            html: 'Your cards have been saved!'
+        })
     }
     render () {
         return (

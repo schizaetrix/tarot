@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom'
 import M from 'materialize-css'
 // -------------------------------------------------
 import Modal from './Modal'
-import GoogleAuth from './GoogleAuth';
+import GoogleAuth from './GoogleAuth'
+import ReadingsNew from './readings/ReadingsNew'
 // -------------------------------------------------
 
 class Landing extends Component {
@@ -38,7 +39,6 @@ class Landing extends Component {
                     className="
                         btn purple darken-3
                         waves-effect waves-light"
-                    style={{ marginTop: 10 }}
                 >
                     Step into the Reading Room
                 </Link>
@@ -55,16 +55,14 @@ class Landing extends Component {
     renderReadingsListBtn () {
         if (this.props.isSignedIn) {
             return (
-                <div style={{ textAlign: 'right' }}>
-                    <Link
-                        to='/readings'
-                        className="
-                            waves-effect waves-light 
-                            btn purple darken-3"
-                    >
-                        See Your Past Readings
-                    </Link>
-                </div>
+                <Link
+                    to='/readings'
+                    className="
+                        waves-effect waves-light 
+                        btn purple darken-3"
+                >
+                    See All Your Readings
+                </Link>
             )
         }
     }
@@ -78,12 +76,15 @@ class Landing extends Component {
                     <h2 className="white-text">
                         Do you have a burning question?
                     </h2>
-                    <div>
-                        {this.renderReadingRoomBtn()}
+                    <div className="row" style={{ marginTop: '20px' }}>
+                        <div className="col">
+                            {this.renderReadingRoomBtn()}
+                        </div>
+                        <div className="col">
+                            {this.renderReadingsListBtn()}
+                        </div>
                     </div>
-                    <div style={{ marginTop: 20 }}>
-                        {this.renderReadingsListBtn()}
-                    </div>
+                    <ReadingsNew />
                 </div>
             </div>
         )

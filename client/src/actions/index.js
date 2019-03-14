@@ -211,7 +211,7 @@ export const saveReadingFive = (id, state) => async (dispatch, getState) => {
 export const noteReading = (id, formValues) => async (dispatch) => {
     const response = await readings.patch(`/readings/${id}`, formValues)
     dispatch({
-        type: EDIT_READING,
+        type: NOTE_READING,
         payload: response.data
     })
     history.push(`/readings/save/${id}`)

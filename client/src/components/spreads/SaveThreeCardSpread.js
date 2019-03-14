@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
 // -------------------------------------------------
 import CardSaved from '../CardSaved'
+import ActionMenu from '../ActionMenu'
 // -------------------------------------------------
 
 class SaveThreeCardSpread extends Component {
     render () {
         return (
             <div className="row background-image">
+                <ActionMenu 
+                    reading={this.props.readingId}
+                />
                 <div className="content-background">
                     <h4 className="white-text">
                         {this.props.question}
