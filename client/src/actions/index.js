@@ -3,13 +3,14 @@ import history from '../history'
 import { 
     SIGN_IN, 
     SIGN_OUT,
+    GET_CARD,
     CREATE_READING,
     FETCH_READINGS,
     FETCH_READING,
     DELETE_READING,
     EDIT_READING,
     SAVE_READING,
-    NOTE_READING
+    NOTE_READING,
 } from './types'
 // -------------------------------------------------
 
@@ -25,6 +26,17 @@ export const signOut = () => {
     history.push('/')
     return {
         type: SIGN_OUT
+    }
+}
+
+export const getCard = (image, title, id) => {
+    return {
+        type: GET_CARD,
+        payload: {
+            image,
+            title,
+            id
+        }
     }
 }
 
@@ -149,7 +161,7 @@ export const saveReadingThree = (id, state) => async (dispatch, getState) => {
     cardTooltip2 = state.card2.tooltip
     cardImage3 = state.card3.image
     cardTitle3 = state.card3.title
-    cardId3 = state.card2.id
+    cardId3 = state.card3.id
     cardTooltip3 = state.card3.tooltip
 
     const response = await readings.patch(`/readings/${id}`, {
@@ -183,7 +195,7 @@ export const saveReadingFive = (id, state) => async (dispatch, getState) => {
     cardTooltip2 = state.card2.tooltip
     cardImage3 = state.card3.image
     cardTitle3 = state.card3.title
-    cardId3 = state.card2.id
+    cardId3 = state.card3.id
     cardTooltip3 = state.card3.tooltip
     cardImage4 = state.card4.image
     cardTitle4 = state.card4.title

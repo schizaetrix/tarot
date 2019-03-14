@@ -83,7 +83,7 @@ class FiveCardSpread extends Component {
                     className="                        
                         btn-floating btn-large 
                         waves-effect waves-light
-                        purple darken-3
+                        purple darken-3 pulse
                         fixed-action-btn tooltipped"
                     data-position="right"
                     data-tooltip="Save Your Cards"

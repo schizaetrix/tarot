@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -21,7 +22,7 @@ class ReadingsNew extends Component {
                         cardTitle1={reading.cardTitle1}
                         style={{
                             height: '200px',
-                            width: '100px'
+                            width: '110px'
                         }}
                     />
                 )
@@ -35,7 +36,7 @@ class ReadingsNew extends Component {
                         cardImage3={reading.cardImage3}
                         cardTitle3={reading.cardTitle3}
                         style={{
-                            height: '150px',
+                            height: '130px',
                             width: '75px'
                         }}
                     />
@@ -55,7 +56,7 @@ class ReadingsNew extends Component {
                         cardTitle5={reading.cardTitle5}
                         style={{
                             height: '100px',
-                            width: '50px'
+                            width: '55px'
                         }}
                     />
                 )
@@ -63,19 +64,21 @@ class ReadingsNew extends Component {
     }
     renderAdminBtns (reading) {
         return (
-            <div className="row">
+            <div className="row" style={{ position: 'relative' }}>
                 <Link to={`/readings/edit/${reading.id}`}>
                     <i className="
-                        material-icons small
-                        purple-text text-darken-3"
+                        material-icons
+                        reading-card-edit
+                        white-text"
                     >
                         edit
                     </i>
                 </Link>
                 <Link to={`/readings/delete/${reading.id}`}>
                     <i className="
-                        material-icons small
-                        purple-text text-darken-3"
+                        material-icons
+                        reading-card-delete
+                        white-text"
                     >
                         delete
                     </i>
@@ -85,46 +88,83 @@ class ReadingsNew extends Component {
     }
     renderReadingCards () {
         const readingsArr = this.props.readings
-        return readingsArr.slice(Math.max(readingsArr.length - 3, 0)).reverse().map(
+        const userReadings = []
+        for (let i = 0; i < readingsArr.length; i++) {
+            if (readingsArr[i].userId === this.props.currentUserId ) {
+                userReadings.push(readingsArr[i])
+            }
+        }
+        return userReadings.slice(Math.max(userReadings.length - 3, 0)).reverse().map(
             (reading) => {
-                if (reading.userId === this.props.currentUserId) {
-                    return (
-                        <div className="col s4" key={reading.id}>
+                return (
+                    <div className="col s4" key={reading.id}>
+                        {this.renderAdminBtns(reading)}
+                        <Link to={`/readings/save/${reading.id}`}>
                             <div className="card small reading-card-background">
-                                <div className="card-image">
+                                <div className="card-content">
                                     {this.renderReadingSpread(reading)}
                                 </div>
-                                <Link 
-                                    to={`/readings/save/${reading.id}`}
-                                    className="card-title white-text left-align"
+                                <div 
+                                    className="white-text left-align"
+                                    style={{
+                                        padding: '10px'
+                                    }}
                                 >
-                                    <h6>{reading.question}</h6>
-                                </Link>
-                                {this.renderAdminBtns(reading)}
+                                    {reading.question}
+                                </div>
                             </div>
-                        </div>
-                    )
-                } else { return [] }
+                        </Link>
+                    </div>
+                )
             }
         )
     }
     render () {
-        return (
-            <div className="row container white-text">
-                <div 
-                    style={{
-                        marginTop: '30px',
-                        marginBottom: '10px',
-                        textAlign: 'left'
-                    }}
-                >
-                    <h5>
-                        Recent Readings...
-                    </h5>
+        const readingsObj = this.props.readingsObj
+        const userReadings = {}
+        for (var x in readingsObj) {
+            if (readingsObj[x].userId === this.props.currentUserId) {
+                userReadings[x] = readingsObj[x]
+            }
+        }
+        if (this.props.isSignedIn && !_.isEmpty(userReadings)) {
+            return (
+                <div className="row container white-text">
+                    <div 
+                        style={{
+                            marginTop: '25px',
+                            marginBottom: '10px',
+                            textAlign: 'left'
+                        }}
+                    >
+                        <h5>
+                            Recent Readings...
+                        </h5>
+                    </div>
+                    {this.renderReadingCards()}
+                    <div
+                        style={{
+                            marginTop: '50px',
+                            textAlign: 'right'
+                        }}
+                    >
+                        <h6>
+                            ... click 
+                            <Link 
+                                to="/readings"
+                                className="
+                                    btn-small
+                                    purple darken-3"
+                                style={{ margin: '5px' }}
+                            >
+                                HERE
+                            </Link> 
+                            for more readings!
+                        </h6>
+                    </div>
                 </div>
-                {this.renderReadingCards()}
-            </div>
-        )
+            )
+        } else { return null }
     }
 }
 
@@ -132,7 +172,9 @@ class ReadingsNew extends Component {
 const mapStateToProps = (state) => {
     return { 
         readings: Object.values(state.readings),
-        currentUserId: state.auth.userId
+        readingsObj: state.readings,
+        currentUserId: state.auth.userId,
+        isSignedIn: state.auth.isSignedIn
     }
 }
 // -------------------------------------------------

@@ -7,7 +7,13 @@ body {
 }
 a {
     color: #FFF
-  }
+}
+a:hover {
+    transform: scale(1.1)
+}
+.btn:hover {
+    transform: scale(1.05)
+}
 
 /* General styles -------------------------------- */
 #landing-content {
@@ -37,32 +43,28 @@ a {
 }
 #background-image-landing {
     background: linear-gradient( 
-        rgba(0, 0, 0, 0.5), 
-        rgba(0, 0, 0, 0.5) 
+        rgba(0, 0, 0, 0.7), 
+        rgba(0, 0, 0, 0.7) 
     ), url('../images/marseilles1.jpeg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-.reading-card-background {
-    box-shadow: 5px 5px 4 0 #000;
+
+/* CardPage styles -------------------------------- */
+.card-info {
     background-color: rgba(0, 0, 0, 0.4);
+    border-bottom: 2px solid #6a1b9a;
+    border-top: 2px solid #6a1b9a;
+    overflow: auto;
+    height: 100%;
+    white-space: pre-wrap;
+}
+.card-page-image {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    padding: 10px
-}
-.reading-card-icon {
-    display: flex;
-    align-items: flex-end !important;
-    justify-content: flex-end !important;
-}
-.card-title {
-    display: flex;
-    padding: 10px;
-    flex-direction: column;
+    align-items: center;
 }
 
 /* Form styles -------------------------------- */
@@ -89,12 +91,16 @@ textarea.materialize-textarea:focus:not([readonly]) {
     border-bottom: 1px solid #6a1b9a !important;
     box-shadow: 0 1px 0 0 #000;
 }
+
 /* Card styles -------------------------------- */
 .card-style {
     margin: 15px !important;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.card-hover:hover {
+    transform: scale(1.05)
 }
 .flip-card {
     background-color: transparent;
@@ -133,7 +139,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
     border-bottom: 1px solid #6a1b9a !important;
     border-top: 1px solid #6a1b9a !important;
     border-right: transparent !important;
-    border-left: transparent !important;
+    border-left: transparent !important
 }
 .collection, .collection-item:nth-of-type(even) {
     width: 70vw;
@@ -142,7 +148,46 @@ textarea.materialize-textarea:focus:not([readonly]) {
     border-bottom: 1px solid #6a1b9a !important;
     border-top: 1px solid #6a1b9a !important;
     border-right: transparent !important;
-    border-left: transparent !important;
+    border-left: transparent !important
+}
+.list-edit:hover {
+    transform: scale(1.1)
+}
+.list-delete:hover {
+    transform: scale(1.1)
+}
+
+/* Thumb styles -------------------------------- */
+.reading-card-background {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-bottom: 2px solid #6a1b9a;
+    border-top: 2px solid #6a1b9a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px
+}
+.reading-card-background:hover {
+    transform: scale(1.01)
+}
+.reading-card-edit {
+    position: absolute;
+    top: 35px;
+    right: 25px;
+    z-index: 10
+}
+.reading-card-edit:hover {
+    transform: scale(1.1);
+}
+.reading-card-delete {
+    position: absolute;
+    top: 65px;
+    right: 25px;
+    z-index: 10
+}
+.reading-card-delete:hover {
+    transform: scale(1.1);
 }
 
 /* Misc. styles -------------------------------- */

@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 // -------------------------------------------------
 import { fetchReadings } from '../../actions'
+import BackButton from '../BackButton'
 // -------------------------------------------------
 
 class ReadingsList extends Component {
@@ -16,7 +17,11 @@ class ReadingsList extends Component {
                     <Link
                         to={`/readings/edit/${reading.id}`}
                     >
-                        <i className="material-icons white-text">
+                        <i className="
+                            material-icons 
+                            list-edit
+                            white-text"
+                        >
                             edit
                         </i>
                     </Link>
@@ -25,7 +30,11 @@ class ReadingsList extends Component {
                     <Link
                         to={`/readings/delete/${reading.id}`}
                     >
-                        <i className="material-icons white-text">
+                        <i className="
+                            material-icons 
+                            list-delete
+                            white-text"
+                        >
                             delete
                         </i>
                     </Link>
@@ -50,6 +59,16 @@ class ReadingsList extends Component {
             )
         }
     }
+    renderIcon (reading) {
+        switch (reading.spread) {
+            case 'One Card Spread':
+                return <i className="material-icons circle purple darken-3">filter_1</i>
+            case 'Three Card Spread':
+                return <i className="material-icons circle purple darken-3">filter_3</i>
+            default:
+                return <i className="material-icons circle purple darken-3">filter_5</i>
+        }
+    }
     renderList () {
         return this.props.readings.reverse().map((reading) => {
             if (reading.userId === this.props.currentUserId) {
@@ -58,13 +77,7 @@ class ReadingsList extends Component {
                         className="collection-item avatar" 
                         key={reading.id}
                     >
-                        <i 
-                            className="
-                                material-icons circle
-                                purple darken-3"
-                        >
-                            collections_bookmark
-                        </i>
+                        {this.renderIcon(reading)}
                         <span>
                             <Link 
                                 to={`/readings/save/${reading.id}`}
@@ -98,6 +111,7 @@ class ReadingsList extends Component {
     render () {
         return (
             <div className="background-image">
+                <BackButton />
                 <div className="content-background">
                     <h2 className="white-text">
                         Readings

@@ -1,14 +1,21 @@
 import _ from 'lodash'
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import M from 'materialize-css'
+// -------------------------------------------------
+import { getCard } from '../actions'
 // -------------------------------------------------
 
 class CardSaved extends Component {
     componentDidMount () {
-        let cardTooltip = document.getElementById(this.props.cardId)
+        const cardTooltip = document.getElementById(this.props.cardId)
         M.Tooltip.init(cardTooltip, {})
     }
     render () {
+        const image = this.props.cardImage
+        const title = this.props.cardTitle
+        const id = this.props.cardId
         return (
             <div className="col">
                 <div className="card-style">
@@ -20,17 +27,26 @@ class CardSaved extends Component {
                             'width'
                         )}
                     >
-                        <img 
-                            className="tooltipped"
-                            src={this.props.cardImage}
-                            alt={this.props.cardTitle}
+                        <Link
+                            to={`/cards/${this.props.cardId}`}
+                            onClick={() => {
+                                this.props.getCard(image, title, id)
+                            }}
+                        >
+                            <img 
+                                src={this.props.cardImage}
+                                alt={this.props.cardTitle}
+                                style={this.props.style}
+                                className="card-hover"
+                            />
+                        </Link>
+                        <div 
+                            className="
+                                card-title center-align
+                                tooltipped"
                             id={this.props.cardId}
-                            style={this.props.style}
                             data-position={this.props.tooltipPosition}
                             data-tooltip={this.props.cardTooltip}
-                        />
-                        <div 
-                            className="card-title center-align"
                             style={_.pick(
                                 this.props.style,
                                 'fontSize',
@@ -47,5 +63,8 @@ class CardSaved extends Component {
 }
 
 // -------------------------------------------------
-export default CardSaved
+export default connect(
+    null,
+    { getCard }
+)(CardSaved)
 // -------------------------------------------------

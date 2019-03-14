@@ -43,7 +43,7 @@ class SaveFiveCardSpread extends Component {
                                 cardTitle={this.props.cardTitle2}
                                 cardId={this.props.cardId2}
                                 cardTooltip={this.props.cardTooltip2}
-                                tooltipPosition="left"
+                                tooltipPosition="bottom"
                             />
                         </div>
                         <div className="col">

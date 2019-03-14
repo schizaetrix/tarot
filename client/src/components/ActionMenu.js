@@ -73,20 +73,20 @@ class ActionMenu extends Component {
                         </a>
                     </li>
                     <li>
-                        <Link 
+                        <button 
                             className="
                                 btn-floating grey 
                                 waves-effect waves-light
                                 darken-3 tooltipped"
                             data-position="right"
-                            data-tooltip="Readings List"
+                            data-tooltip="Previous Page"
                             id="back"
-                            to="/readings"
+                            onClick={() => window.history.back()}
                         >
                             <i className="material-icons">
                                 arrow_back
                             </i>
-                        </Link>
+                        </button>
                     </li>
                 </ul>
             </div>

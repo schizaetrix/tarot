@@ -4,10 +4,11 @@ import { Router, Route, Switch } from 'react-router-dom'
 import '../styles/App.css'
 import Header from './Header'
 import Landing from './Landing'
+import CardPage from './CardPage'
 import CreateReading from './readings/CreateReading'
 import EditReading from './readings/EditReading'
 import DeleteReading from './readings/DeleteReading'
-import SaveReading from './readings/SaveReading';
+import SaveReading from './readings/SaveReading'
 import ViewReading from './readings/ViewReading'
 import ReadingsList from './readings/ReadingsList'
 import history from '../history'
@@ -24,6 +25,10 @@ class App extends Component {
                             <Route 
                                 path='/'
                                 exact component={Landing}
+                            />
+                            <Route 
+                                path="/cards/:id"
+                                exact component={CardPage}
                             />
                             <Route 
                                 path='/readings/new'
