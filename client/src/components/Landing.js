@@ -18,7 +18,7 @@ class Landing extends Component {
                 <a 
                     className="
                         waves-effect waves-light 
-                        btn purple darken-3 
+                        btn-large purple darken-3 
                         modal-trigger"
                     href="#signin"
                     style={{ marginTop: 10 }}
@@ -52,6 +52,20 @@ class Landing extends Component {
             </div>
         )
     }
+    renderCardsSearchBtn () {
+        if (this.props.isSignedIn) {
+            return (
+                <Link
+                    to='/cards'
+                    className="
+                        waves-effect waves-light 
+                        btn purple darken-3"
+                >
+                    Search the Cards
+                </Link>
+            )
+        }
+    }
     renderReadingsListBtn () {
         if (this.props.isSignedIn) {
             return (
@@ -61,7 +75,7 @@ class Landing extends Component {
                         waves-effect waves-light 
                         btn purple darken-3"
                 >
-                    See All Your Readings
+                    See All Readings
                 </Link>
             )
         }
@@ -77,6 +91,9 @@ class Landing extends Component {
                         Do you have a burning question?
                     </h2>
                     <div className="row" style={{ marginTop: '20px' }}>
+                        <div className="col">
+                            {this.renderCardsSearchBtn()}
+                        </div>
                         <div className="col">
                             {this.renderReadingRoomBtn()}
                         </div>

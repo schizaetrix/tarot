@@ -5,6 +5,7 @@ import '../styles/App.css'
 import Header from './Header'
 import Landing from './Landing'
 import CardPage from './CardPage'
+import CardsSearch from './CardsSearch'
 import CreateReading from './readings/CreateReading'
 import EditReading from './readings/EditReading'
 import DeleteReading from './readings/DeleteReading'
@@ -29,6 +30,10 @@ class App extends Component {
                             <Route 
                                 path="/cards/:id"
                                 exact component={CardPage}
+                            />
+                            <Route
+                                path="/cards"
+                                exact component={CardsSearch}
                             />
                             <Route 
                                 path='/readings/new'

@@ -43,16 +43,6 @@ export const getCard = (image, title, id) => {
 export const createReading = (formValues) => async (dispatch, getState) => {
     const { userId } = getState().auth
 
-    // let cardImages = new Array(5)
-    // cardImages.fill(null)
-    // let cardTitles = newArray(5)
-    // cardTitles.fill(null)
-    // let cardIds = new Array(5)
-    // cardIds.fill(null)
-    // let cardTooltips = new Array(5)
-    // cardTooltips.fill
-    // The post request doesn't want to accept arr[0] format?
-
     let cardImage1 = null
     let cardTitle1 = null
     let cardId1 = null

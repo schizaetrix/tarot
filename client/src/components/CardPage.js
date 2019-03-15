@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 // -------------------------------------------------
 import Cards from '../images/cardsDB'
@@ -20,7 +19,7 @@ class CardPage extends Component {
         }
     }
     render () {
-        return ReactDOM.createPortal(
+        return (
             <div className="row background-image">
                 <BackButton />
                 <div className="content-background white-text">
@@ -52,8 +51,7 @@ class CardPage extends Component {
                         </div>
                     </div>
                 </div>
-            </div>,
-            document.querySelector('#cardpage')
+            </div>
         )
     }
 }

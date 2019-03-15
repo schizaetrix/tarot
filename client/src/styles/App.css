@@ -51,6 +51,10 @@ a:hover {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+/* .carousel {
+    border-left: 1px solid #6a1b9a !important;
+    border-right: 1px solid #6a1b9a !important;
+} */
 
 /* CardPage styles -------------------------------- */
 .card-info {
@@ -90,6 +94,17 @@ textarea.materialize-textarea {
 textarea.materialize-textarea:focus:not([readonly]) {
     border-bottom: 1px solid #6a1b9a !important;
     box-shadow: 0 1px 0 0 #000;
+}
+.input-field input[type=search]:focus:not(.browser-default) {
+    border-bottom: 1px solid #6a1b9a !important;
+    box-shadow: 0 1px 0 0 #000 !important;
+    background-color: transparent;
+    color: #FFF
+}
+.input-field input[type=search] {
+    box-shadow: 0 1px 0 0 #000 !important;
+    background-color: transparent;
+    color: #FFF
 }
 
 /* Card styles -------------------------------- */
