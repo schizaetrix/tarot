@@ -1,28 +1,32 @@
+import Cards from '../images/cardsDB'
 import { 
-    SIGN_IN,
-    SIGN_OUT
+    FILTER_CARDS_A, 
+    FILTER_CARDS_B,
+    FILTER_CARDS_R
 } from '../actions/types'
 // -------------------------------------------------
 
 const INITIAL_STATE = {
-    isSignedIn: null,
-    userId: null
+    filteredCards: Cards
 }
 
 // -------------------------------------------------
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case SIGN_IN:
+        case FILTER_CARDS_A:
             return { 
                 ...state, 
-                isSignedIn: true,
-                userId: action.payload
+                filteredCards: action.payload
             }
-        case SIGN_OUT:
+        case FILTER_CARDS_B:
             return { 
                 ...state, 
-                isSignedIn: false,
-                userId: null 
+                filteredCards: action.payload
+            }
+        case FILTER_CARDS_R:
+            return {
+                ...state,
+                filteredCards: action.payload
             }
         default:
             return state

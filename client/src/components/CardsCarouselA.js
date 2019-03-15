@@ -5,9 +5,9 @@ import M from 'materialize-css'
 // -------------------------------------------------
 import { getCard } from '../actions'
 
-class CardsCarousel extends Component {
+class CardsCarouselA extends Component {
     componentDidMount () {
-        const carousel = document.querySelectorAll('.carousel')
+        const carousel = document.getElementById(this.props.carouselId)
         const options = {
             numVisible: 12,
             dist: -50
@@ -33,6 +33,10 @@ class CardsCarousel extends Component {
                         <img 
                             src={card.image}
                             alt={card.title}
+                            style={{
+                                paddingBottom: '20px',
+                                borderBottom: '3px solid #6a1b9a'
+                            }}
                         />
                     </Link>
                 )
@@ -42,7 +46,8 @@ class CardsCarousel extends Component {
     render () {
         return (
             <div 
-                className="carousel" 
+                className="carousel"
+                id={this.props.carouselId}
                 style={{ 
                     overflow: 'visible',
                     marginBottom: '20px'
@@ -58,5 +63,5 @@ class CardsCarousel extends Component {
 export default connect(
     null,
     { getCard }
-)(CardsCarousel)
+)(CardsCarouselA)
 // -------------------------------------------------

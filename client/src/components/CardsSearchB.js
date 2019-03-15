@@ -1,18 +1,15 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 // -------------------------------------------------
+import history from '../history'
+import { filterB } from '../actions'
 import Cards from '../images/cardsDB'
-import CardsCarousel from './CardsCarousel'
+import CardsCarouselB from './CardsCarouselB'
 import SearchBar from './SearchBar'
 import BackButton from './BackButton'
 // -------------------------------------------------
 
-class CardsSearch extends Component {
-    constructor (props) {
-        super(props)
-        this.state = { 
-            search: Cards
-        }
-    }
+class CardsSearchB extends Component {
     searchCards = async (search) => {
         const searchString = await search.toLowerCase()
         const filterCards = await Cards.filter((cards) => {
@@ -20,28 +17,26 @@ class CardsSearch extends Component {
             return cardIndices
         })
         if (search === '') {
-            this.setState({
-                search: Cards
-            })
+            this.props.filterB(Cards)
         } else {
-            this.setState({
-                search: filterCards
-            })
+            this.props.filterB(filterCards)
         }
-        console.log(this.state.search)
-        this.forceUpdate()
     }
     render () {
         return (
             <div className="row background-image">
-                <BackButton />
+                <BackButton 
+                    backBtnRoute={() => history.push('/')}
+                    backBtnTooltip="Back to Home"
+                />
                 <div className="content-background white-text">
                     <h2>Cards Search</h2>
                     <SearchBar 
                         onFormSubmit={this.searchCards}
                     />
-                    <CardsCarousel 
-                        searchState={this.state.search}
+                    <CardsCarouselB 
+                        searchState={this.props.filter}
+                        carouselId="filterB"
                     />
                 </div>
             </div>
@@ -50,5 +45,14 @@ class CardsSearch extends Component {
 }
 
 // -------------------------------------------------
-export default CardsSearch
+const mapStateToProps = (state) => {
+    return {
+        filter: state.filter.filteredCards
+    }
+}
+// -------------------------------------------------
+export default connect(
+    mapStateToProps,
+    { filterB }
+)(CardsSearchB)
 // -------------------------------------------------

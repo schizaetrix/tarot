@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 // -------------------------------------------------
+import history from '../../history'
 import { fetchReadings } from '../../actions'
 import BackButton from '../BackButton'
 // -------------------------------------------------
@@ -111,7 +112,10 @@ class ReadingsList extends Component {
     render () {
         return (
             <div className="background-image">
-                <BackButton />
+                <BackButton 
+                    backBtnRoute={() => history.push('/')}
+                    backBtnTooltip="Back to Home"
+                />
                 <div className="content-background">
                     <h2 className="white-text">
                         Readings

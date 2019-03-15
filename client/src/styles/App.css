@@ -51,10 +51,6 @@ a:hover {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-/* .carousel {
-    border-left: 1px solid #6a1b9a !important;
-    border-right: 1px solid #6a1b9a !important;
-} */
 
 /* CardPage styles -------------------------------- */
 .card-info {
@@ -206,10 +202,20 @@ textarea.materialize-textarea:focus:not([readonly]) {
 }
 
 /* Misc. styles -------------------------------- */
-.fixed-action-btn {
+.first-btn {
     position: fixed;
     right: auto; 
     top: 12%;
+    margin-left: 3%;
+    color: #6a1b9a;
+}
+.first-btn:hover {
+    transform: scale(1.1)
+}
+.fixed-action-btn {
+    position: fixed;
+    right: auto; 
+    top: 20%;
     margin-left: 3%;
     color: #6a1b9a;
 }

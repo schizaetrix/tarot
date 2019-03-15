@@ -13,13 +13,13 @@ class BackButton extends Component {
                 className="
                     btn-floating btn-large 
                     waves-effect waves-light
-                    purple darken-3
-                    fixed-action-btn 
+                    purple darken-3 first-btn 
                     tooltipped"
                 data-position="right"
-                data-tooltip="Previous Page"
+                data-tooltip={this.props.backBtnTooltip}
                 id="back"
-                onClick={() => window.history.back()}
+                // onClick={() => window.history.back()}
+                onClick={this.props.backBtnRoute}
             >
                 <i className="material-icons">
                     arrow_back

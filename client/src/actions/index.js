@@ -4,6 +4,8 @@ import {
     SIGN_IN, 
     SIGN_OUT,
     GET_CARD,
+    FILTER_CARDS_A,
+    FILTER_CARDS_B,
     CREATE_READING,
     FETCH_READINGS,
     FETCH_READING,
@@ -11,7 +13,9 @@ import {
     EDIT_READING,
     SAVE_READING,
     NOTE_READING,
+    FILTER_CARDS_R,
 } from './types'
+import Cards from '../images/cardsDB'
 // -------------------------------------------------
 
 export const signIn = (userId) => {
@@ -23,7 +27,7 @@ export const signIn = (userId) => {
 }
 
 export const signOut = () => {
-    history.push('/')
+    // history.push('/')
     return {
         type: SIGN_OUT
     }
@@ -37,6 +41,33 @@ export const getCard = (image, title, id) => {
             title,
             id
         }
+    }
+}
+
+export const filterA = (cards) => async (dispatch, getState) => {
+    let filter = await getState().filter.filteredCards
+    filter = cards
+    dispatch({
+        type: FILTER_CARDS_A,
+        payload: filter
+    })
+    history.push('/search/b')
+}
+
+export const filterB = (cards) => async (dispatch, getState) => {
+    let filter = await getState().filter.filteredCards
+    filter = cards
+    dispatch({
+        type: FILTER_CARDS_B,
+        payload: filter
+    })
+    history.push('/search/a')
+}
+
+export const resetFilter = () => {
+    return {
+        type: FILTER_CARDS_R,
+        payload: Cards
     }
 }
 
@@ -88,7 +119,7 @@ export const createReading = (formValues) => async (dispatch, getState) => {
         interpretation, retrospective
     })
     
-        dispatch({
+    dispatch({
         type: CREATE_READING,
         payload: response.data
     })

@@ -39,7 +39,11 @@ class ViewReading extends Component {
     }
     render () {
         if (!this.props.reading) {
-            return <div>Loading...</div>
+            return (
+                <div className="progress">
+                    <div className="indeterminate" />
+                </div>
+            )
         }
         return (
             <div>

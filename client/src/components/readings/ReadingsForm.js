@@ -3,6 +3,8 @@ import { Field, reduxForm } from 'redux-form'
 import { Link } from 'react-router-dom'
 import M from 'materialize-css'
 // -------------------------------------------------
+import BackButton from '../BackButton'
+// -------------------------------------------------
 
 class ReadingsForm extends Component {
     componentDidMount () {
@@ -56,6 +58,10 @@ class ReadingsForm extends Component {
     render () {
         return (
             <div className="row background-image">
+                <BackButton 
+                    backBtnRoute={() => window.history.back()}
+                    backBtnTooltip="Previous Page"
+                />
                 <div className="content-background">
                     <h3 className="white-text">
                         {this.props.header}

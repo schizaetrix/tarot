@@ -89,11 +89,11 @@ class ReadingsNew extends Component {
     renderReadingCards () {
         const readingsArr = this.props.readings
         const userReadings = []
-        for (let i = 0; i < readingsArr.length; i++) {
-            if (readingsArr[i].userId === this.props.currentUserId ) {
-                userReadings.push(readingsArr[i])
+        readingsArr.forEach((reading) => {
+            if (reading.userId === this.props.currentUserId) {
+                userReadings.push(reading)
             }
-        }
+        })
         return userReadings.slice(Math.max(userReadings.length - 3, 0)).reverse().map(
             (reading) => {
                 return (

@@ -7,6 +7,7 @@ const INITIAL_STATE = {
     id: null
 }
 
+// -------------------------------------------------
 export default (state = INITIAL_STATE, action) => {
     if (action.type === GET_CARD) {
         return {
@@ -18,3 +19,4 @@ export default (state = INITIAL_STATE, action) => {
     }
     return state
 }
+// -------------------------------------------------

@@ -9,11 +9,11 @@ class CardPage extends Component {
     constructor (props) {
         super(props)
         let cardInfo
-        for (let i = 0; i < Cards.length; i++) {
-            if (Cards[i].id === this.props.card.id) {
-                cardInfo = Cards[i].info
+        Cards.forEach((card) => {
+            if (card.id === this.props.card.id) {
+                cardInfo = card.info
             }
-        }
+        })
         this.state = {
             info: cardInfo
         }
@@ -21,7 +21,10 @@ class CardPage extends Component {
     render () {
         return (
             <div className="row background-image">
-                <BackButton />
+                <BackButton 
+                    backBtnRoute={() => window.history.back()}
+                    backBtnTooltip="Previous Page"
+                />
                 <div className="content-background white-text">
                     <h4>{this.props.card.title}</h4>
                     <div 

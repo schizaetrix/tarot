@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import M from 'materialize-css'
 // -------------------------------------------------
+import history from '../history'
+// -------------------------------------------------
 
 class ActionMenu extends Component {
     componentDidMount () {
@@ -39,6 +41,22 @@ class ActionMenu extends Component {
                 </a>
                 <ul>
                     <li>
+                        <button 
+                            className="
+                                btn-floating grey 
+                                waves-effect waves-light
+                                darken-3 tooltipped"
+                            data-position="right"
+                            data-tooltip="New Reading"
+                            id="back"
+                            onClick={() => history.push('/readings/new')}
+                        >
+                            <i className="material-icons">
+                                add
+                            </i>
+                        </button>
+                    </li>
+                    <li>
                         <Link 
                             className="
                                 btn-floating grey 
@@ -71,22 +89,6 @@ class ActionMenu extends Component {
                                 format_quote
                             </i>
                         </a>
-                    </li>
-                    <li>
-                        <button 
-                            className="
-                                btn-floating grey 
-                                waves-effect waves-light
-                                darken-3 tooltipped"
-                            data-position="right"
-                            data-tooltip="Previous Page"
-                            id="back"
-                            onClick={() => window.history.back()}
-                        >
-                            <i className="material-icons">
-                                arrow_back
-                            </i>
-                        </button>
                     </li>
                 </ul>
             </div>

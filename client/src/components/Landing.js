@@ -56,7 +56,7 @@ class Landing extends Component {
         if (this.props.isSignedIn) {
             return (
                 <Link
-                    to='/cards'
+                    to="/search/a"
                     className="
                         waves-effect waves-light 
                         btn purple darken-3"

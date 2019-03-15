@@ -39,7 +39,7 @@ class OneCardSpread extends Component {
                         btn-floating btn-large 
                         waves-effect waves-light
                         purple darken-3 pulse
-                        fixed-action-btn tooltipped"
+                        first-btn tooltipped"
                     data-position="right"
                     data-tooltip="Save Your Cards"
                     id="save"

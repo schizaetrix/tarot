@@ -1,13 +1,19 @@
 import React, { Component } from 'react'
 // -------------------------------------------------
+import history from '../../history'
 import CardSaved from '../CardSaved'
 import ActionMenu from '../ActionMenu'
+import BackButton from '../BackButton'
 // -------------------------------------------------
 
 class SaveFiveCardSpread extends Component {
     render () {
         return (
             <div className="row background-image">
+                <BackButton 
+                    backBtnRoute={() => history.push('/readings')}
+                    backBtnTooltip="Readings List"
+                />
                 <ActionMenu 
                     reading={this.props.readingId}
                 />

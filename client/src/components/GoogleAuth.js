@@ -22,7 +22,7 @@ class GoogleAuth extends Component {
         if (isSignedIn) {
             this.props.signIn(this.auth.currentUser.get().getId()) // action creator
         } else {
-            this.props.signOut() // action creator
+            this.props.signOut()
         }
     }
     onSignInClick = () => {
@@ -45,6 +45,7 @@ class GoogleAuth extends Component {
                         grey darken-3
                     "
                     onClick={this.onSignOutClick}
+                    // href="/"
                 >
                     <i className="material-icons left">
                         arrow_back
